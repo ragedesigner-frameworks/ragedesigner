@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Solutions | Strategic Marketing & Design That Compounds | RageDesigner</title>
+    <meta name="description" content="Systematic business growth through design and marketing that compound over time. Strategic intelligence for established businesses ready to dominate their market.">
+    <meta property="og:title" content="Integrated Solutions | RageDesigner">
+    <meta property="og:description" content="Complete competitive analysis, customer psychology mapping, and market positioning that makes price objections disappear.">
+    <meta property="og:url" content="https://ragedesigner.com/integrated-solutions">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal-blue: #1A2332;
+            --logo-blue: #325d74;
+            --copper: #B7704F;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --logo-blue-light: rgba(50, 93, 116, 0.1);
+            --charcoal-medium: rgba(26, 35, 50, 0.85);
+            --charcoal-light: rgba(26, 35, 50, 0.6);
+            --text-xs: 0.688rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --text-3xl: 2.441rem;
+            --text-5xl: 3.815rem;
+            --leading-tight: 1.25;
+            --leading-snug: 1.4;
+            --leading-normal: 1.6;
+            --leading-relaxed: 1.75;
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-7: 56px;
+            --space-10: 80px;
+            --space-12: 96px;
+            --space-15: 120px;
+            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08);
+            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.06);
+            --shadow-xl: 0 12px 32px rgba(26, 35, 50, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: var(--text-base);
+            line-height: var(--leading-normal);
+            color: var(--charcoal-blue);
+            background: var(--white);
+        }
+        nav {
+            background: var(--white);
+            padding: var(--space-2) var(--space-6);
+            border-bottom: 1px solid var(--logo-blue-light);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-text { font-size: var(--text-xl); font-weight: 700; color: var(--charcoal-blue); letter-spacing: 0.05em; }
+        .logo-text span { color: var(--logo-blue); }
+        .nav-links { display: flex; align-items: center; gap: var(--space-4); }
+        .nav-links a { color: var(--charcoal-light); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--logo-blue); }
+        .nav-cta {
+            display: inline-block; background: var(--logo-blue); color: var(--white) !important;
+            padding: 12px var(--space-3); font-size: var(--text-sm); font-weight: 600;
+            border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--logo-blue);
+        }
+        .nav-cta:hover { background: transparent; color: var(--logo-blue) !important; }
+        .hero {
+            background: var(--charcoal-blue);
+            color: var(--white);
+            padding: var(--space-15) var(--space-3) var(--space-12);
+            text-align: center;
+        }
+        .hero-content { max-width: 820px; margin: 0 auto; }
+        .hero h1 {
+            font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl));
+            font-weight: 700; line-height: var(--leading-tight);
+            margin-bottom: var(--space-3); letter-spacing: -0.02em;
+        }
+        .hero-subtitle {
+            font-size: clamp(var(--text-md), 3vw, var(--text-xl));
+            max-width: 600px; margin: 0 auto var(--space-5);
+            line-height: var(--leading-normal); opacity: 0.95;
+        }
+        .hero-price { font-size: var(--text-2xl); color: var(--copper); font-weight: 700; margin-bottom: var(--space-5); }
+        .btn-primary {
+            display: inline-block; background: var(--copper); color: var(--white);
+            padding: var(--space-2) var(--space-6); font-size: var(--text-md); font-weight: 600;
+            text-decoration: none; border-radius: 8px; transition: all 0.3s ease;
+            border: 2px solid var(--copper);
+        }
+        .btn-primary:hover { background: transparent; color: var(--copper); transform: translateY(-2px); }
+        section { padding: var(--space-12) var(--space-3); }
+        .container { max-width: 820px; margin: 0 auto; }
+        .container-wide { max-width: 1100px; margin: 0 auto; }
+        h2 {
+            font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+            color: var(--charcoal-blue); margin-bottom: var(--space-4);
+            line-height: var(--leading-tight); font-weight: 700; text-align: center;
+        }
+        h3 { font-size: var(--text-xl); color: var(--charcoal-blue); margin-bottom: var(--space-2); font-weight: 700; }
+        p { font-size: var(--text-md); line-height: var(--leading-relaxed); margin-bottom: var(--space-3); color: var(--charcoal-medium); }
+        .services { background: var(--light-gray); }
+        .services-grid { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-6); }
+        .service-category {
+            background: var(--white); border-radius: 12px; padding: var(--space-5);
+            box-shadow: var(--shadow-md);
+        }
+        .service-header { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+        .service-icon {
+            width: 50px; height: 50px; background: var(--copper); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .service-icon svg { width: 24px; height: 24px; fill: var(--white); }
+        .service-header h3 { margin-bottom: 0; }
+        .service-list { list-style: none; padding-left: var(--space-3); }
+        .service-list li {
+            font-size: var(--text-md); color: var(--charcoal-medium); line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-2); padding-left: var(--space-3); position: relative;
+        }
+        .service-list li::before {
+            content: ""; position: absolute; left: 0; top: 10px;
+            width: 8px; height: 8px; background: var(--copper); border-radius: 50%;
+        }
+        .results { background: var(--charcoal-blue); color: var(--white); }
+        .results h2 { color: var(--white); }
+        .results-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-5); margin-top: var(--space-5); }
+        .results-list { list-style: none; }
+        .results-list li {
+            display: flex; align-items: flex-start; gap: var(--space-2);
+            font-size: var(--text-md); color: rgba(255,255,255,0.9); margin-bottom: var(--space-3);
+        }
+        .results-list li::before { content: "✓"; color: var(--copper); font-weight: 700; }
+        .perfect-for {
+            background: rgba(255,255,255,0.1); border-radius: 12px; padding: var(--space-4);
+        }
+        .perfect-for h3 { color: var(--white); margin-bottom: var(--space-2); }
+        .perfect-for p { color: rgba(255,255,255,0.9); margin-bottom: 0; }
+        .process { background: var(--white); }
+        .process-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-5); margin-top: var(--space-6);
+        }
+        .process-step { text-align: center; background: var(--light-gray); border-radius: 12px; padding: var(--space-5); }
+        .step-number {
+            width: 60px; height: 60px; background: var(--copper); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto var(--space-3); font-size: var(--text-xl); font-weight: 700; color: var(--white);
+        }
+        .process-step h3 { text-align: center; margin-bottom: var(--space-2); }
+        .process-step p { text-align: center; margin-bottom: 0; }
+        .cta-section { background: var(--logo-blue); color: var(--white); text-align: center; }
+        .cta-section h2 { color: var(--white); }
+        .cta-section p { color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto var(--space-5); font-size: var(--text-lg); }
+        .cta-section .btn-primary { background: var(--white); color: var(--logo-blue); border-color: var(--white); }
+        .cta-section .btn-primary:hover { background: transparent; color: var(--white); }
+        footer {
+            padding: var(--space-6) var(--space-3) var(--space-4);
+            background: #0f151d; color: var(--white); text-align: center;
+        }
+        .footer-logo { font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-3); letter-spacing: 0.05em; }
+        .footer-logo span { color: var(--logo-blue); }
+        footer p { opacity: 0.7; font-size: var(--text-sm); }
+        footer a { color: var(--copper); text-decoration: none; }
+        .footer-links { margin-bottom: var(--space-3); }
+        .footer-links a { margin: 0 var(--space-2); }
+        @media (max-width: 768px) {
+            nav { padding: var(--space-2) var(--space-3); }
+            .hero { padding: var(--space-12) var(--space-3) var(--space-10); }
+            section { padding: var(--space-10) var(--space-3); }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .nav-cta { padding: 10px var(--space-2); font-size: var(--text-xs); }
+            .service-header { flex-direction: column; text-align: center; }
+            .results-wrapper { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link"><span class="logo-text">RAGE<span>DESIGNER</span></span></a>
+        <div class="nav-links">
+            <a href="/services">Services</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Integrated Solutions</h1>
+            <p class="hero-subtitle">Systematic business growth through design and marketing that compound over time.</p>
+            <div class="hero-price">Starting at $10,000</div>
+            <a href="/contact" class="btn-primary">Schedule a Consultation</a>
+        </div>
+    </section>
+    
+    <section class="services">
+        <div class="container-wide">
+            <h2>What You Actually Get</h2>
+            <div class="services-grid">
+                <div class="service-category">
+                    <div class="service-header">
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                        <h3>Strategic Intelligence System</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li>Complete competitive analysis showing exactly what your competitors do wrong</li>
+                        <li>Customer psychology mapping that reveals why people actually buy from you</li>
+                        <li>Market positioning that makes price objections disappear</li>
+                        <li>Data collection systems that make every customer interaction smarter</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <div class="service-header">
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+                        <h3>Compound Marketing Advantages</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li>Website, social media, and advertising that all reinforce the same message</li>
+                        <li>Lead nurturing sequences that turn browsers into buyers over time</li>
+                        <li>Content strategy that positions you as the obvious expert choice</li>
+                        <li>SEO that owns entire problem categories, not just keywords</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <div class="service-header">
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                        <h3>Systematic Growth Engine</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li>Every design choice backed by psychology research, not guesswork</li>
+                        <li>Marketing campaigns that build on previous successes instead of starting over</li>
+                        <li>Customer feedback loops that improve your positioning automatically</li>
+                        <li>Scalable systems that work whether you get 10 or 1000 new customers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="results">
+        <div class="container-wide">
+            <h2>What This Means For Your Business</h2>
+            <div class="results-wrapper">
+                <ul class="results-list">
+                    <li>Competitors wonder how you're everywhere while they're invisible</li>
+                    <li>Customers choose you before they even see your prices</li>
+                    <li>Your marketing gets more effective over time instead of wearing out</li>
+                    <li>You stop competing on price because people see the value difference</li>
+                </ul>
+                <div class="perfect-for">
+                    <h3>Perfect For:</h3>
+                    <p>Established businesses ready to dominate their market. Companies tired of one-off marketing that doesn't build on itself. Businesses that want systematic competitive advantages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="process">
+        <div class="container-wide">
+            <h2>The Process</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We figure out who your best customers are and what makes them actually buy</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Build</h3>
+                    <p>Create everything so it works together (no competing against yourself)</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Launch & Optimize</h3>
+                    <p>Go live and make sure everything actually brings in customers</p>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--copper); font-style: italic; margin-top: var(--space-5);">Timing depends on project scope</p>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Build Systems That Compound?</h2>
+            <p>Stop running marketing campaigns that start from zero every time. Build intelligence systems that get smarter with every customer.</p>
+            <a href="/contact" class="btn-primary">Schedule a Consultation</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-logo">RAGE<span>DESIGNER</span></div>
+        <div class="footer-links">
+            <a href="/services">Services</a> | 
+            <a href="/portfolio">Portfolio</a> | 
+            <a href="/blog">Blog</a> | 
+            <a href="/contact">Contact</a>
+        </div>
+        <p>Strategic Design & Marketing Intelligence since 1999</p>
+        <p style="margin-top: var(--space-2);">&copy; 2025 RageDesigner. St. Petersburg, Florida.</p>
+    </footer>
+</body>
+</html>
