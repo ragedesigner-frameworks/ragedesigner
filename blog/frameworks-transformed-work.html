@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Frameworks Transformed My Daily Work | RageDesigner</title>
+    <meta name="description" content="You keep solving the same problems over and over. Here's what changed when I finally stopped recreating solutions and started building frameworks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --charcoal-blue: #1A2332; --logo-blue: #325d74; --copper: #B7704F; --white: #ffffff; --light-gray: #f5f5f5; --logo-blue-light: rgba(50, 93, 116, 0.1); --charcoal-medium: rgba(26, 35, 50, 0.85); --charcoal-light: rgba(26, 35, 50, 0.6); --text-xs: 0.688rem; --text-sm: 0.875rem; --text-base: 1rem; --text-md: 1.125rem; --text-lg: 1.25rem; --text-xl: 1.563rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem; --text-5xl: 3.815rem; --leading-tight: 1.25; --leading-normal: 1.6; --leading-relaxed: 1.75; --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 40px; --space-6: 48px; --space-7: 56px; --space-10: 80px; --space-15: 120px; --nav-height: 70px; --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; font-size: var(--text-base); line-height: var(--leading-normal); color: var(--charcoal-blue); background: var(--white); }
+        nav { background: var(--white); padding: var(--space-2) var(--space-6); border-bottom: 1px solid var(--logo-blue-light); position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; height: var(--nav-height); }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-text { font-size: var(--text-xl); font-weight: 700; color: var(--charcoal-blue); letter-spacing: 0.05em; }
+        .logo-text span { color: var(--logo-blue); }
+        .nav-links { display: flex; align-items: center; gap: var(--space-4); }
+        .nav-links a { color: var(--charcoal-light); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--logo-blue); }
+        .nav-cta { display: inline-block; background: var(--logo-blue); color: var(--white) !important; padding: 12px var(--space-3); font-size: var(--text-sm); font-weight: 600; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--logo-blue); }
+        .nav-cta:hover { background: transparent; color: var(--logo-blue) !important; }
+        .blog-hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: calc(var(--nav-height) + var(--space-10)) var(--space-3) var(--space-10); color: var(--white); position: relative; background-image: url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png'); background-size: cover; background-position: center; }
+        .blog-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); z-index: 1; }
+        .blog-hero > * { position: relative; z-index: 2; }
+        .blog-hero-meta { font-size: var(--text-sm); color: var(--copper); font-weight: 700; margin-bottom: var(--space-3); text-transform: uppercase; letter-spacing: 1px; }
+        .blog-hero-title { font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-4); max-width: 900px; }
+        .blog-hero-subtitle { font-size: clamp(var(--text-md), 3vw, var(--text-xl)); color: var(--white); max-width: 700px; line-height: var(--leading-normal); }
+        .blog-content { max-width: 800px; margin: 0 auto; padding: var(--space-15) var(--space-3); }
+        .blog-content p { font-size: var(--text-md); line-height: var(--leading-relaxed); color: var(--charcoal-medium); margin-bottom: var(--space-4); }
+        .blog-content p.lead { font-size: var(--text-lg); color: var(--charcoal-blue); }
+        .blog-content h2 { font-size: var(--text-2xl); color: var(--charcoal-blue); font-weight: 700; margin: var(--space-10) 0 var(--space-4) 0; line-height: var(--leading-tight); }
+        .blog-content h3 { font-size: var(--text-xl); color: var(--charcoal-blue); font-weight: 600; margin: var(--space-6) 0 var(--space-3) 0; }
+        .blog-pull-quote { background: var(--light-gray); border-left: 4px solid var(--copper); padding: var(--space-5) var(--space-6); margin: var(--space-10) 0; font-size: var(--text-lg); font-style: italic; color: var(--charcoal-medium); line-height: var(--leading-relaxed); }
+        .blog-highlight { background: #fef9f3; border-left: 4px solid var(--copper); padding: var(--space-5); margin: var(--space-6) 0; border-radius: 4px; }
+        .blog-highlight p { color: var(--charcoal-blue); margin: 0; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0; }
+        .stat-card { background: var(--light-gray); padding: var(--space-5); border-radius: 8px; border-top: 4px solid var(--copper); }
+        .stat-card h4 { font-size: var(--text-lg); color: var(--charcoal-blue); margin-bottom: var(--space-2); }
+        .stat-before { font-size: var(--text-sm); color: var(--charcoal-light); margin-bottom: var(--space-1); }
+        .stat-after { font-size: var(--text-md); color: var(--charcoal-blue); font-weight: 600; margin-bottom: var(--space-2); }
+        .stat-insight { font-size: var(--text-sm); color: var(--charcoal-medium); font-style: italic; }
+        .blog-author { max-width: 800px; margin: var(--space-15) auto; padding: var(--space-6) var(--space-5); background: var(--light-gray); border-radius: 8px; }
+        .blog-author p { font-size: var(--text-base); color: var(--charcoal-medium); line-height: var(--leading-relaxed); margin: 0; }
+        .blog-cta-section { background: var(--light-gray); padding: var(--space-15) var(--space-3); text-align: center; }
+        .blog-cta-content { max-width: 800px; margin: 0 auto; }
+        .blog-cta-section h3 { font-size: var(--text-2xl); color: var(--charcoal-blue); margin: 0 0 var(--space-3) 0; }
+        .blog-cta-section p { font-size: var(--text-md); color: var(--charcoal-medium); margin: 0 0 var(--space-5) 0; }
+        .blog-cta-button { display: inline-block; padding: var(--space-2) var(--space-6); background: var(--copper); color: var(--white); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: var(--text-md); transition: all 0.3s ease; border: 2px solid var(--copper); }
+        .blog-cta-button:hover { background: transparent; color: var(--copper); }
+        .blog-newsletter { background: var(--charcoal-blue); padding: var(--space-15) var(--space-3); text-align: center; }
+        .blog-newsletter-content { max-width: 600px; margin: 0 auto; }
+        .blog-newsletter h3 { font-size: var(--text-2xl); color: var(--white); margin: 0 0 var(--space-2) 0; }
+        .blog-newsletter p { font-size: var(--text-md); color: rgba(255, 255, 255, 0.8); margin: 0 0 var(--space-4) 0; }
+        .blog-newsletter-form { display: flex; gap: var(--space-1); max-width: 500px; margin: 0 auto; }
+        .blog-newsletter-input { flex: 1; padding: 14px 20px; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 6px; background: rgba(255, 255, 255, 0.1); color: var(--white); font-family: inherit; font-size: var(--text-base); }
+        .blog-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.5); }
+        .blog-newsletter-button { padding: 14px 32px; background: var(--copper); color: var(--white); border: 2px solid var(--copper); border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .blog-newsletter-button:hover { background: transparent; color: var(--copper); }
+        footer { padding: var(--space-7) var(--space-3) var(--space-5); background: #0f151d; color: var(--white); text-align: center; }
+        .footer-logo { font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-4); letter-spacing: 0.05em; }
+        .footer-logo span { color: var(--logo-blue); }
+        footer p { opacity: 0.7; font-size: var(--text-sm); }
+        footer a { color: var(--copper); text-decoration: none; }
+        .footer-links { margin-bottom: var(--space-4); }
+        .footer-links a { margin: 0 var(--space-2); }
+        @media (max-width: 768px) { nav { padding: var(--space-2) var(--space-3); } .blog-hero { min-height: 80vh; } .blog-content { padding: var(--space-10) var(--space-3); } .stat-grid { grid-template-columns: 1fr; } .blog-newsletter-form { flex-direction: column; } .nav-links a:not(.nav-cta) { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link"><span class="logo-text">RAGE<span>DESIGNER</span></span></a>
+        <div class="nav-links">
+            <a href="/services">Services</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+    
+    <section class="blog-hero">
+        <div class="blog-hero-meta">Framework Development • 6 min read</div>
+        <h1 class="blog-hero-title">You Keep Solving the Same Problems Over and Over</h1>
+        <p class="blog-hero-subtitle">Here's what changed when I finally stopped recreating solutions and started building frameworks</p>
+    </section>
+    
+    <article class="blog-content">
+        <p class="lead">Ugh, here I go again.</p>
+        <p>Another client call. Another challenge that sounds eerily familiar. You're already three sentences into their explanation and thinking "wait, didn't I solve this exact problem two months ago?"</p>
+        <p>But here's the thing. You can't quite remember HOW you solved it. Was it that strategic questioning sequence? Or that framework you sketched on the whiteboard? Or honestly you're not entirely sure.</p>
+        <p>So you're starting from scratch. Again. Solving a problem you've definitely solved before. Recreating a breakthrough you've already had.</p>
+
+        <div class="blog-pull-quote">"I swear I've done this before."</div>
+
+        <h2>The Moment Everything Changed</h2>
+        <p>Three months ago, I stopped pretending this was fine.</p>
+        <p>I had just finished a brilliant client session. Everything clicked. The strategic questions flowed naturally, they saw insights they'd never considered, closing felt effortless instead of forced.</p>
+        <p>And then a similar client called three weeks later.</p>
+        <p>I spent 20 minutes trying to remember what made that first conversation so effective. The breakthrough was real. My ability to recreate it? That was the actual problem.</p>
+
+        <h2>What I Discovered About My Own Work</h2>
+        <p>Here's what I realized: I had patterns. Successful approaches. Methods that worked consistently.</p>
+        <p>They just lived in my head. Inaccessible when I needed them most. Trapped behind "I know I've done this before but..."</p>
+        <p>The breakthrough wasn't discovering frameworks. It was realizing the METHODOLOGY could work across entirely different domains.</p>
+
+        <h2>The Part That Surprised Me</h2>
+        <p>A sales professional on our team saw the framework. Asked if he could try it.</p>
+
+        <div class="blog-pull-quote">"Way easier," he said after using it daily for two weeks. Started recommending it to colleagues. Eventually upgraded his ChatGPT account specifically to access it.</div>
+
+        <p>This wasn't about ME solving problems better. This was about extracting systematic approaches that OTHER people could apply successfully.</p>
+
+        <h2>What Actually Changes</h2>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <h4>Blog Production</h4>
+                <div class="stat-before">Used to take: 45 minutes of staring at blank screens</div>
+                <div class="stat-after">Now takes: 10 minutes with same quality</div>
+                <div class="stat-insight">Didn't get faster at writing. Got systematic about the process.</div>
+            </div>
+            <div class="stat-card">
+                <h4>Client Conversations</h4>
+                <div class="stat-before">Used to: Hope I'd hit the right insights</div>
+                <div class="stat-after">Now: Apply SOLVE framework, breakthrough thinking emerges consistently</div>
+                <div class="stat-insight">Didn't get smarter. Got systematic about strategic questioning.</div>
+            </div>
+            <div class="stat-card">
+                <h4>Team Scaling</h4>
+                <div class="stat-before">Used to be: Bottleneck. "Only Mike can handle complex stuff"</div>
+                <div class="stat-after">Now: Team members deploy frameworks in Spanish sales calls with consistent results</div>
+                <div class="stat-insight">Didn't clone myself. Made expertise systematic enough to transfer.</div>
+            </div>
+        </div>
+
+        <h2>Two Paths Forward</h2>
+        <h3>Need Frameworks Now?</h3>
+        <p>Strategic Framework Consulting extracts systematic solutions from your existing successful approaches. Custom frameworks built for your specific challenges. Investment ranges from $2,500 to $10,000 depending on complexity.</p>
+
+        <h3>Want to Learn the Method?</h3>
+        <p>Strategic Thinking Academy teaches framework creation methodology. Build systematic intelligence as professional capability. $750 for the next cohort.</p>
+
+        <div class="blog-highlight">
+            <p><strong>The Real Question:</strong> How many times will you brilliantly solve the same problem before you systematize the solution?</p>
+        </div>
+    </article>
+    
+    <div class="blog-author">
+        <p><em>Mike Goetz (RageDesigner) combines 25 years of creative problem-solving with systematic framework development. He helps professionals extract repeatable patterns from their breakthrough moments and transform them into frameworks that scale.</em></p>
+    </div>
+    
+    <section class="blog-cta-section">
+        <div class="blog-cta-content">
+            <h3>Ready to Systematize Your Expertise?</h3>
+            <p>Stop recreating your best work. Start building frameworks that compound.</p>
+            <a href="/contact" class="blog-cta-button">Start a Conversation</a>
+        </div>
+    </section>
+    
+    <section class="blog-newsletter">
+        <div class="blog-newsletter-content">
+            <h3>Subscribe to Strategic Intelligence Weekly</h3>
+            <p>Weekly insights on systematic thinking and framework development.</p>
+            <form class="blog-newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="email" name="email" placeholder="Your email address" class="blog-newsletter-input" required>
+                <button type="submit" class="blog-newsletter-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-logo">RAGE<span>DESIGNER</span></div>
+        <div class="footer-links">
+            <a href="/services">Services</a> | <a href="/portfolio">Portfolio</a> | <a href="/blog">Blog</a> | <a href="/contact">Contact</a>
+        </div>
+        <p>Strategic Design & Marketing Intelligence since 1999</p>
+        <p style="margin-top: var(--space-2);">&copy; 2025 RageDesigner. St. Petersburg, Florida.</p>
+    </footer>
+</body>
+</html>
