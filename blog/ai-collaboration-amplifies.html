@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building AI Collaboration That Amplifies What You Already Love Doing | RageDesigner</title>
+    <meta name="description" content="Everyone's talking about AI replacing jobs. Here's what they're missing: the real opportunity isn't replacement, it's amplification.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --charcoal-blue: #1A2332; --logo-blue: #325d74; --copper: #B7704F; --white: #ffffff; --light-gray: #f5f5f5; --logo-blue-light: rgba(50, 93, 116, 0.1); --charcoal-medium: rgba(26, 35, 50, 0.85); --charcoal-light: rgba(26, 35, 50, 0.6); --text-xs: 0.688rem; --text-sm: 0.875rem; --text-base: 1rem; --text-md: 1.125rem; --text-lg: 1.25rem; --text-xl: 1.563rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem; --text-5xl: 3.815rem; --leading-tight: 1.25; --leading-normal: 1.6; --leading-relaxed: 1.75; --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 40px; --space-6: 48px; --space-7: 56px; --space-10: 80px; --space-15: 120px; --nav-height: 70px; --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; font-size: var(--text-base); line-height: var(--leading-normal); color: var(--charcoal-blue); background: var(--white); }
+        nav { background: var(--white); padding: var(--space-2) var(--space-6); border-bottom: 1px solid var(--logo-blue-light); position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; height: var(--nav-height); }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-text { font-size: var(--text-xl); font-weight: 700; color: var(--charcoal-blue); letter-spacing: 0.05em; }
+        .logo-text span { color: var(--logo-blue); }
+        .nav-links { display: flex; align-items: center; gap: var(--space-4); }
+        .nav-links a { color: var(--charcoal-light); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--logo-blue); }
+        .nav-cta { display: inline-block; background: var(--logo-blue); color: var(--white) !important; padding: 12px var(--space-3); font-size: var(--text-sm); font-weight: 600; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--logo-blue); }
+        .nav-cta:hover { background: transparent; color: var(--logo-blue) !important; }
+        .blog-hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: calc(var(--nav-height) + var(--space-10)) var(--space-3) var(--space-10); color: var(--white); position: relative; background-image: url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png'); background-size: cover; background-position: center; }
+        .blog-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); z-index: 1; }
+        .blog-hero > * { position: relative; z-index: 2; }
+        .blog-hero-meta { font-size: var(--text-sm); color: var(--copper); font-weight: 700; margin-bottom: var(--space-3); text-transform: uppercase; letter-spacing: 1px; }
+        .blog-hero-title { font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-4); max-width: 900px; }
+        .blog-hero-subtitle { font-size: clamp(var(--text-md), 3vw, var(--text-xl)); color: var(--white); max-width: 700px; line-height: var(--leading-normal); }
+        .blog-content { max-width: 800px; margin: 0 auto; padding: var(--space-15) var(--space-3); }
+        .blog-content p { font-size: var(--text-md); line-height: var(--leading-relaxed); color: var(--charcoal-medium); margin-bottom: var(--space-4); }
+        .blog-content p.lead { font-size: var(--text-lg); color: var(--charcoal-blue); }
+        .blog-content h2 { font-size: var(--text-2xl); color: var(--charcoal-blue); font-weight: 700; margin: var(--space-10) 0 var(--space-4) 0; line-height: var(--leading-tight); }
+        .blog-content h3 { font-size: var(--text-xl); color: var(--charcoal-blue); font-weight: 600; margin: var(--space-6) 0 var(--space-3) 0; }
+        .blog-content ul { margin: var(--space-4) 0; padding-left: var(--space-5); }
+        .blog-content li { font-size: var(--text-md); line-height: var(--leading-relaxed); color: var(--charcoal-medium); margin-bottom: var(--space-2); }
+        .blog-pull-quote { background: var(--light-gray); border-left: 4px solid var(--copper); padding: var(--space-5) var(--space-6); margin: var(--space-10) 0; font-size: var(--text-lg); font-style: italic; color: var(--charcoal-medium); line-height: var(--leading-relaxed); }
+        .blog-author { max-width: 800px; margin: var(--space-15) auto; padding: var(--space-6) var(--space-5); background: var(--light-gray); border-radius: 8px; }
+        .blog-author p { font-size: var(--text-base); color: var(--charcoal-medium); line-height: var(--leading-relaxed); margin: 0; }
+        .blog-cta-section { background: var(--light-gray); padding: var(--space-15) var(--space-3); text-align: center; }
+        .blog-cta-content { max-width: 800px; margin: 0 auto; }
+        .blog-cta-section h3 { font-size: var(--text-2xl); color: var(--charcoal-blue); margin: 0 0 var(--space-3) 0; }
+        .blog-cta-section p { font-size: var(--text-md); color: var(--charcoal-medium); margin: 0 0 var(--space-5) 0; }
+        .blog-cta-button { display: inline-block; padding: var(--space-2) var(--space-6); background: var(--copper); color: var(--white); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: var(--text-md); transition: all 0.3s ease; border: 2px solid var(--copper); }
+        .blog-cta-button:hover { background: transparent; color: var(--copper); }
+        .blog-newsletter { background: var(--charcoal-blue); padding: var(--space-15) var(--space-3); text-align: center; }
+        .blog-newsletter-content { max-width: 600px; margin: 0 auto; }
+        .blog-newsletter h3 { font-size: var(--text-2xl); color: var(--white); margin: 0 0 var(--space-2) 0; }
+        .blog-newsletter p { font-size: var(--text-md); color: rgba(255, 255, 255, 0.8); margin: 0 0 var(--space-4) 0; }
+        .blog-newsletter-form { display: flex; gap: var(--space-1); max-width: 500px; margin: 0 auto; }
+        .blog-newsletter-input { flex: 1; padding: 14px 20px; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 6px; background: rgba(255, 255, 255, 0.1); color: var(--white); font-family: inherit; font-size: var(--text-base); }
+        .blog-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.5); }
+        .blog-newsletter-button { padding: 14px 32px; background: var(--copper); color: var(--white); border: 2px solid var(--copper); border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .blog-newsletter-button:hover { background: transparent; color: var(--copper); }
+        footer { padding: var(--space-7) var(--space-3) var(--space-5); background: #0f151d; color: var(--white); text-align: center; }
+        .footer-logo { font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-4); letter-spacing: 0.05em; }
+        .footer-logo span { color: var(--logo-blue); }
+        footer p { opacity: 0.7; font-size: var(--text-sm); }
+        footer a { color: var(--copper); text-decoration: none; }
+        .footer-links { margin-bottom: var(--space-4); }
+        .footer-links a { margin: 0 var(--space-2); }
+        @media (max-width: 768px) { nav { padding: var(--space-2) var(--space-3); } .blog-hero { min-height: 80vh; } .blog-content { padding: var(--space-10) var(--space-3); } .blog-newsletter-form { flex-direction: column; } .nav-links a:not(.nav-cta) { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link"><span class="logo-text">RAGE<span>DESIGNER</span></span></a>
+        <div class="nav-links">
+            <a href="/services">Services</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+    
+    <section class="blog-hero">
+        <div class="blog-hero-meta">AI Strategy • 7 min read</div>
+        <h1 class="blog-hero-title">Building AI Collaboration That Amplifies What You Already Love Doing</h1>
+        <p class="blog-hero-subtitle">The real opportunity isn't replacement. It's amplification.</p>
+    </section>
+    
+    <article class="blog-content">
+        <p class="lead">Everyone's talking about AI replacing jobs. Here's what they're missing: the real opportunity isn't replacement, it's amplification. And the best AI collaboration doesn't automate away what you love. It makes more of it possible.</p>
+
+        <h2>The Wrong Question</h2>
+        <p>Most people ask "What can AI do for me?" That's backwards.</p>
+        <p>The better question: "What do I already do well that AI can help me do more of?"</p>
+
+        <h2>The Amplification Framework</h2>
+        <h3>Step 1: Identify Your Energy Sources</h3>
+        <p>What work leaves you energized rather than drained? What problems do you actually enjoy solving?</p>
+
+        <h3>Step 2: Map the Friction</h3>
+        <p>What gets in the way of doing more of that work? What tedious tasks surround the work you love?</p>
+
+        <h3>Step 3: Design the Collaboration</h3>
+        <p>Build AI workflows that reduce friction around your core work without automating the work itself.</p>
+
+        <h3>Step 4: Protect the Core</h3>
+        <p>Some things shouldn't be delegated to AI. The strategic decisions. The creative breakthroughs. The judgment calls that require your experience.</p>
+
+        <div class="blog-pull-quote">The best AI collaboration doesn't automate away what you love. It makes more of it possible.</div>
+
+        <h2>Real Examples</h2>
+        <p><strong>A designer:</strong> Uses AI to generate initial layout variations, but makes all refinement decisions herself. AI handles mechanical generation so she can spend more time on aesthetic judgment.</p>
+        <p><strong>A consultant:</strong> Uses AI to synthesize research and identify patterns, but writes all strategic recommendations himself. AI handles data processing so he can focus on the thinking that matters.</p>
+        <p><strong>A writer:</strong> Uses AI to organize research and suggest structural options, but writes every word herself. AI handles scaffolding so she can spend more time on the craft.</p>
+
+        <h2>The Warning Signs</h2>
+        <p>You've built the wrong AI collaboration if:</p>
+        <ul>
+            <li>You feel disconnected from the output</li>
+            <li>The work feels generic or hollow</li>
+            <li>You're spending less time on what used to energize you</li>
+            <li>You're accepting AI suggestions without real judgment</li>
+        </ul>
+
+        <h2>Building Your Amplification System</h2>
+        <p>Start small. Pick one thing you love doing and one friction point that gets in the way. Build AI collaboration around reducing that friction.</p>
+        <p>The goal isn't to automate your job. The goal is to do more of what only you can do, better than you could without assistance.</p>
+        <p>That's amplification.</p>
+    </article>
+    
+    <div class="blog-author">
+        <p><em>Mike Goetz (RageDesigner) builds AI collaboration systems that amplify strategic thinking capability rather than replacing human judgment.</em></p>
+    </div>
+    
+    <section class="blog-cta-section">
+        <div class="blog-cta-content">
+            <h3>Ready to Build AI Collaboration That Amplifies Your Strengths?</h3>
+            <p>Start with what you love. Build from there.</p>
+            <a href="/contact" class="blog-cta-button">Start a Conversation</a>
+        </div>
+    </section>
+    
+    <section class="blog-newsletter">
+        <div class="blog-newsletter-content">
+            <h3>Subscribe to Strategic Intelligence Weekly</h3>
+            <p>Weekly insights on systematic thinking and framework development.</p>
+            <form class="blog-newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="email" name="email" placeholder="Your email address" class="blog-newsletter-input" required>
+                <button type="submit" class="blog-newsletter-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-logo">RAGE<span>DESIGNER</span></div>
+        <div class="footer-links">
+            <a href="/services">Services</a> | <a href="/portfolio">Portfolio</a> | <a href="/blog">Blog</a> | <a href="/contact">Contact</a>
+        </div>
+        <p>Strategic Design & Marketing Intelligence since 1999</p>
+        <p style="margin-top: var(--space-2);">&copy; 2025 RageDesigner. St. Petersburg, Florida.</p>
+    </footer>
+</body>
+</html>
