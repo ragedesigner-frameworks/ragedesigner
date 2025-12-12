@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | RageDesigner</title>
+    <meta name="description" content="25 years of strategic design and marketing work. Selected projects showcasing systematic approaches that drive real business results.">
+    <meta property="og:title" content="Portfolio | RageDesigner">
+    <meta property="og:description" content="Selected projects showcasing strategic design and marketing that compounds.">
+    <meta property="og:url" content="https://ragedesigner.com/portfolio">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal-blue: #1A2332;
+            --logo-blue: #325d74;
+            --copper: #B7704F;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --logo-blue-light: rgba(50, 93, 116, 0.1);
+            --charcoal-medium: rgba(26, 35, 50, 0.85);
+            --charcoal-light: rgba(26, 35, 50, 0.6);
+            --text-xs: 0.688rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --text-3xl: 2.441rem;
+            --text-5xl: 3.815rem;
+            --leading-tight: 1.25;
+            --leading-normal: 1.6;
+            --leading-relaxed: 1.75;
+            --space-1: 8px;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-7: 56px;
+            --space-10: 80px;
+            --space-12: 96px;
+            --space-15: 120px;
+            --space-20: 160px;
+            --nav-height: 70px;
+            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08);
+            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.06);
+            --shadow-xl: 0 12px 32px rgba(26, 35, 50, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: var(--text-base);
+            line-height: var(--leading-normal);
+            color: var(--charcoal-blue);
+            background: var(--white);
+        }
+        nav {
+            background: var(--white);
+            padding: var(--space-2) var(--space-6);
+            border-bottom: 1px solid var(--logo-blue-light);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--nav-height);
+        }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-text { font-size: var(--text-xl); font-weight: 700; color: var(--charcoal-blue); letter-spacing: 0.05em; }
+        .logo-text span { color: var(--logo-blue); }
+        .nav-links { display: flex; align-items: center; gap: var(--space-4); }
+        .nav-links a { color: var(--charcoal-light); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--logo-blue); }
+        .nav-cta {
+            display: inline-block; background: var(--logo-blue); color: var(--white) !important;
+            padding: 12px var(--space-3); font-size: var(--text-sm); font-weight: 600;
+            border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--logo-blue);
+        }
+        .nav-cta:hover { background: transparent; color: var(--logo-blue) !important; }
+        .hero {
+            background: var(--charcoal-blue);
+            color: var(--white);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--nav-height) + var(--space-10)) var(--space-3) var(--space-10);
+        }
+        .hero-content { max-width: 820px; margin: 0 auto; }
+        .hero h1 {
+            font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl));
+            font-weight: 700; line-height: var(--leading-tight);
+            margin-bottom: var(--space-4); letter-spacing: -0.02em;
+        }
+        .hero-subtitle {
+            font-size: clamp(var(--text-md), 3vw, var(--text-xl));
+            max-width: 600px; margin: 0 auto;
+            line-height: var(--leading-normal); color: var(--white);
+        }
+        section { padding: var(--space-15) var(--space-3); }
+        .container { max-width: 820px; margin: 0 auto; }
+        .container-wide { max-width: 1200px; margin: 0 auto; }
+        h2 {
+            font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+            color: var(--charcoal-blue); margin-bottom: var(--space-5);
+            line-height: var(--leading-tight); font-weight: 700; text-align: center;
+        }
+        p { font-size: var(--text-md); line-height: var(--leading-relaxed); margin-bottom: var(--space-3); color: var(--charcoal-medium); }
+        
+        .portfolio-section { background: var(--light-gray); }
+        .portfolio-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-7);
+        }
+        .portfolio-intro p { margin-bottom: 0; }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-5);
+        }
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        .portfolio-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: var(--charcoal-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: var(--text-sm);
+            opacity: 0.6;
+        }
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .portfolio-content {
+            padding: var(--space-4);
+        }
+        .portfolio-category {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--copper);
+            margin-bottom: var(--space-1);
+        }
+        .portfolio-content h3 {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--charcoal-blue);
+            margin-bottom: var(--space-2);
+            line-height: var(--leading-snug);
+        }
+        .portfolio-content p {
+            font-size: var(--text-sm);
+            color: var(--charcoal-light);
+            margin-bottom: 0;
+            line-height: var(--leading-relaxed);
+        }
+        
+        .featured-item {
+            grid-column: span 2;
+        }
+        .featured-item .portfolio-image {
+            aspect-ratio: 16/9;
+        }
+        
+        .services-cta { background: var(--charcoal-blue); color: var(--white); text-align: center; }
+        .services-cta h2 { color: var(--white); }
+        .services-cta p { color: var(--white); max-width: 600px; margin: 0 auto var(--space-6); font-size: var(--text-lg); }
+        .btn-primary {
+            display: inline-block;
+            background: var(--copper);
+            color: var(--white);
+            padding: var(--space-2) var(--space-6);
+            font-size: var(--text-md);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--copper);
+        }
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--copper);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: var(--space-7) var(--space-3) var(--space-5);
+            background: #0f151d; color: var(--white); text-align: center;
+        }
+        .footer-logo { font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-4); letter-spacing: 0.05em; }
+        .footer-logo span { color: var(--logo-blue); }
+        footer p { opacity: 0.7; font-size: var(--text-sm); }
+        footer a { color: var(--copper); text-decoration: none; }
+        .footer-links { margin-bottom: var(--space-4); }
+        .footer-links a { margin: 0 var(--space-2); }
+        
+        @media (max-width: 900px) {
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-item { grid-column: span 2; }
+        }
+        @media (max-width: 600px) {
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .featured-item { grid-column: span 1; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: var(--space-2) var(--space-3); }
+            .hero { min-height: 50vh; padding: calc(var(--nav-height) + var(--space-6)) var(--space-3) var(--space-6); }
+            section { padding: var(--space-12) var(--space-3); }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .nav-cta { padding: 10px var(--space-2); font-size: var(--text-xs); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link"><span class="logo-text">RAGE<span>DESIGNER</span></span></a>
+        <div class="nav-links">
+            <a href="/services">Services</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selected Work</h1>
+            <p class="hero-subtitle">25 years of strategic design and marketing. Here are some projects that showcase systematic thinking in action.</p>
+        </div>
+    </section>
+    
+    <section class="portfolio-section">
+        <div class="container-wide">
+            <div class="portfolio-intro">
+                <p>Each project represents a different challenge, but they all share the same approach: understand the real problem, build systems that compound, and measure what actually matters.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Featured Project 1 -->
+                <div class="portfolio-item featured-item">
+                    <div class="portfolio-image">
+                        <!-- Replace with: <img src="path/to/image.jpg" alt="Project name"> -->
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Web Design + Strategy</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project, the challenge faced, and the results achieved. Two to three sentences max.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Brand Identity</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Marketing Campaign</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Web Design</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">SEO + Content</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Featured Project 6 -->
+                <div class="portfolio-item featured-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Integrated Solution</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of a larger integrated project showing full-service capability.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 7 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Federal Contracting</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 8 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Brand Strategy</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 9 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Web Application</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 10 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Marketing System</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 11 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Logo Design</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 12 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        Image Placeholder
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Strategic Consulting</div>
+                        <h3>Project Title Goes Here</h3>
+                        <p>Brief description of the project and results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services-cta">
+        <div class="container">
+            <h2>Ready to See Your Project Here?</h2>
+            <p>Every project in this portfolio started with a conversation. Let's talk about what systematic design and marketing could do for your business.</p>
+            <a href="/contact" class="btn-primary">Start a Project</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-logo">RAGE<span>DESIGNER</span></div>
+        <div class="footer-links">
+            <a href="/services">Services</a> | 
+            <a href="/portfolio">Portfolio</a> | 
+            <a href="/blog">Blog</a> | 
+            <a href="/contact">Contact</a>
+        </div>
+        <p>Strategic Design & Marketing Intelligence since 1999</p>
+        <p style="margin-top: var(--space-2);">&copy; 2025 RageDesigner. St. Petersburg, Florida.</p>
+    </footer>
+</body>
+</html>
