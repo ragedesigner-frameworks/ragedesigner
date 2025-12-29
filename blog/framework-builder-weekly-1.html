@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework Builder Weekly Issue 1 | RageDesigner</title>
+    <meta name="description" content="Tips are cheap. Decisions cost money. This newsletter teaches you to build systematic intelligence under constraints.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --charcoal-blue: #1A2332; --logo-blue: #325d74; --copper: #B7704F; --white: #ffffff; --light-gray: #f5f5f5; --logo-blue-light: rgba(50, 93, 116, 0.1); --charcoal-medium: rgba(26, 35, 50, 0.85); --charcoal-light: rgba(26, 35, 50, 0.6); --text-xs: 0.688rem; --text-sm: 0.875rem; --text-base: 1rem; --text-md: 1.125rem; --text-lg: 1.25rem; --text-xl: 1.563rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem; --text-5xl: 3.815rem; --leading-tight: 1.25; --leading-normal: 1.6; --leading-relaxed: 1.75; --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 40px; --space-6: 48px; --space-7: 56px; --space-10: 80px; --space-15: 120px; --nav-height: 70px; --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; font-size: var(--text-base); line-height: var(--leading-normal); color: var(--charcoal-blue); background: var(--white); }
+        nav { background: var(--white); padding: var(--space-2) var(--space-6); border-bottom: 1px solid var(--logo-blue-light); position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; height: var(--nav-height); }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-text { font-size: var(--text-xl); font-weight: 700; color: var(--charcoal-blue); letter-spacing: 0.05em; }
+        .logo-text span { color: var(--logo-blue); }
+        .nav-links { display: flex; align-items: center; gap: var(--space-4); }
+        .nav-links a { color: var(--charcoal-light); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--logo-blue); }
+        .nav-cta { display: inline-block; background: var(--logo-blue); color: var(--white) !important; padding: 12px var(--space-3); font-size: var(--text-sm); font-weight: 600; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--logo-blue); }
+        .nav-cta:hover { background: transparent; color: var(--logo-blue) !important; transform: translateY(-2px); }
+        .nav-links a:not(.nav-cta) { position: relative; }
+        .nav-links a:not(.nav-cta)::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--logo-blue); transition: width 0.3s ease; }
+        .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+        .blog-hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: calc(var(--nav-height) + var(--space-10)) var(--space-3) var(--space-10); color: var(--white); position: relative; background-image: url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png'); background-size: cover; background-position: center; }
+        .blog-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); z-index: 1; }
+        .blog-hero > * { position: relative; z-index: 2; }
+        .blog-hero-meta { font-size: var(--text-sm); color: var(--copper); font-weight: 700; margin-bottom: var(--space-3); text-transform: uppercase; letter-spacing: 1px; }
+        .blog-hero-title { font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-4); max-width: 900px; }
+        .blog-hero-subtitle { font-size: clamp(var(--text-md), 3vw, var(--text-xl)); color: var(--white); max-width: 700px; line-height: var(--leading-normal); }
+        .blog-content { max-width: 800px; margin: 0 auto; padding: var(--space-15) var(--space-3); }
+        .blog-content p { font-size: var(--text-md); line-height: var(--leading-relaxed); color: var(--charcoal-medium); margin-bottom: var(--space-4); }
+        .blog-content p.lead { font-size: var(--text-lg); color: var(--charcoal-blue); }
+        .blog-content h2 { font-size: var(--text-2xl); color: var(--charcoal-blue); font-weight: 700; margin: var(--space-10) 0 var(--space-4) 0; line-height: var(--leading-tight); }
+        .blog-content h3 { font-size: var(--text-xl); color: var(--charcoal-blue); font-weight: 600; margin: var(--space-6) 0 var(--space-3) 0; }
+        .blog-pull-quote { background: var(--light-gray); border-left: 4px solid var(--copper); padding: var(--space-5) var(--space-6); margin: var(--space-10) 0; font-size: var(--text-lg); font-style: italic; color: var(--charcoal-medium); line-height: var(--leading-relaxed); }
+        .blog-highlight { background: #fef9f3; border-left: 4px solid var(--copper); padding: var(--space-5); margin: var(--space-6) 0; border-radius: 4px; }
+        .blog-highlight p { color: var(--charcoal-blue); margin: 0; }
+        .section-divider { text-align: center; margin: var(--space-10) 0; color: var(--copper); font-size: var(--text-xl); }
+        .case-study { background: var(--light-gray); padding: var(--space-6); border-radius: 8px; margin: var(--space-6) 0; }
+        .case-study h3 { color: var(--logo-blue); margin-top: 0; }
+        .case-label { font-size: var(--text-sm); color: var(--copper); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-2); }
+        .case-item { margin-bottom: var(--space-3); }
+        .case-item strong { color: var(--charcoal-blue); }
+        .judgment-gate { background: var(--charcoal-blue); color: var(--white); padding: var(--space-6); border-radius: 8px; margin: var(--space-6) 0; }
+        .judgment-gate h3 { color: var(--copper); margin-top: 0; }
+        .judgment-gate p { color: rgba(255,255,255,0.8); }
+        .judgment-gate ol { margin: var(--space-4) 0; padding-left: var(--space-4); }
+        .judgment-gate li { margin-bottom: var(--space-3); color: rgba(255,255,255,0.9); }
+        .micro-win { background: var(--logo-blue-light); padding: var(--space-6); border-radius: 8px; margin: var(--space-6) 0; border: 2px solid var(--logo-blue); }
+        .micro-win h3 { color: var(--logo-blue); margin-top: 0; }
+        .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin: var(--space-4) 0; }
+        .before, .after { padding: var(--space-3); border-radius: 6px; }
+        .before { background: rgba(183, 112, 79, 0.1); }
+        .after { background: rgba(50, 93, 116, 0.1); }
+        .before-label, .after-label { font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-1); }
+        .before-label { color: var(--copper); }
+        .after-label { color: var(--logo-blue); }
+        .blog-cta-section { background: var(--light-gray); padding: var(--space-15) var(--space-3); text-align: center; }
+        .blog-cta-content { max-width: 800px; margin: 0 auto; }
+        .blog-cta-section h3 { font-size: var(--text-2xl); color: var(--charcoal-blue); margin: 0 0 var(--space-3) 0; }
+        .blog-cta-section p { font-size: var(--text-md); color: var(--charcoal-medium); margin: 0 0 var(--space-5) 0; }
+        .blog-cta-button { display: inline-block; padding: var(--space-2) var(--space-6); background: var(--copper); color: var(--white); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: var(--text-md); transition: all 0.3s ease; border: 2px solid var(--copper); margin: 0 var(--space-2) var(--space-3); }
+        .blog-cta-button:hover { background: transparent; color: var(--copper); }
+        .blog-cta-button.secondary { background: transparent; color: var(--logo-blue); border-color: var(--logo-blue); }
+        .blog-cta-button.secondary:hover { background: var(--logo-blue); color: var(--white); }
+        .blog-newsletter { background: var(--charcoal-blue); padding: var(--space-15) var(--space-3); text-align: center; }
+        .blog-newsletter-content { max-width: 600px; margin: 0 auto; }
+        .blog-newsletter h3 { font-size: var(--text-2xl); color: var(--white); margin: 0 0 var(--space-2) 0; }
+        .blog-newsletter p { font-size: var(--text-md); color: rgba(255, 255, 255, 0.8); margin: 0 0 var(--space-4) 0; }
+        .blog-newsletter-form { display: flex; gap: var(--space-1); max-width: 500px; margin: 0 auto; }
+        .blog-newsletter-input { flex: 1; padding: 14px 20px; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 6px; background: rgba(255, 255, 255, 0.1); color: var(--white); font-family: inherit; font-size: var(--text-base); }
+        .blog-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.5); }
+        .blog-newsletter-button { padding: 14px 32px; background: var(--copper); color: var(--white); border: 2px solid var(--copper); border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .blog-newsletter-button:hover { background: transparent; color: var(--copper); }
+        footer { padding: var(--space-10) var(--space-3) var(--space-5); background: #0f151d; color: var(--white); }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-6); margin-bottom: var(--space-7); }
+        .footer-brand .footer-logo { font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-3); letter-spacing: 0.05em; }
+        .footer-brand .footer-logo span { color: var(--logo-blue); }
+        .footer-brand p { color: rgba(255,255,255,0.6); font-size: var(--text-base); margin-bottom: 0; }
+        .footer-column h4 { color: var(--white); font-size: var(--text-base); font-weight: 600; margin-bottom: var(--space-3); }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: var(--space-2); }
+        .footer-column a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: var(--text-base); transition: color 0.2s ease; }
+        .footer-column a:hover { color: var(--copper); }
+        .footer-bottom { text-align: center; padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom p { font-size: var(--text-sm); margin-bottom: 0; color: var(--copper); }
+        @media (max-width: 900px) { .footer-content { grid-template-columns: 1fr 1fr; gap: var(--space-5); } .before-after { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { nav { padding: var(--space-2) var(--space-3); } .blog-hero { min-height: 80vh; } .blog-content { padding: var(--space-10) var(--space-3); } .blog-newsletter-form { flex-direction: column; } .nav-links a:not(.nav-cta) { display: none; } .footer-content { grid-template-columns: 1fr; text-align: center; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link">
+            <span class="logo-text">RAGE<span>DESIGNER</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/portfolio.html">Portfolio</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://ragedesigner.com/contact/" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+    
+    <section class="blog-hero">
+        <div class="blog-hero-meta">Framework Builder Weekly • Issue #1</div>
+        <h1 class="blog-hero-title">Framework Builder Weekly</h1>
+        <p class="blog-hero-subtitle">Tips are cheap. Decisions cost money. This newsletter teaches you to build systematic intelligence under constraints.</p>
+    </section>
+    
+    <article class="blog-content">
+        <h2>Field Note: The Problem with "Just Ask AI"</h2>
+        
+        <p class="lead">Last month, I watched a company spend over $2,000 on ChatGPT Plus accounts because their team "needed better AI." Same prompts, same inconsistent results, now with a bigger bill.</p>
+        
+        <p>The problem was not the AI. It was the missing framework.</p>
+        
+        <p>Or consider this: when you are explaining complex compliance services to clients who speak Spanish as their first language, you cannot rely on "just prompt better." You need systematic intelligence that works the same way every time, regardless of which AI tool you are using.</p>
+        
+        <p>That is the constraint most professionals face now: AI is everywhere, but frameworks for using it systematically are rare. The companies that figure this out first will have an unfair advantage that lasts until their competitors catch up.</p>
+        
+        <p>Which might be 12-18 months. Maybe less.</p>
+
+        <div class="section-divider">• • •</div>
+        
+        <div class="case-study">
+            <div class="case-label">Case Slice Teardown</div>
+            <h3>From Inconsistent to "Way Easier" in 6 Weeks</h3>
+            
+            <div class="case-item"><strong>Role:</strong> Bilingual sales representative</div>
+            <div class="case-item"><strong>Situation:</strong> Explaining complex compliance services to Spanish-speaking clients. Technical complexity plus language considerations created inconsistent client conversations.</div>
+            <div class="case-item"><strong>Constraint:</strong> Needed systematic approach that worked across different client scenarios without relying on memorization.</div>
+            <div class="case-item"><strong>Intervention:</strong> Applied custom framework methodology to structure client explanations.</div>
+            <div class="case-item"><strong>Outcome:</strong> Client conversations became "way easier" with increased confidence. Sustained daily usage for 6 weeks. Would recommend to other bilingual sales professionals.</div>
+            
+            <div class="blog-highlight">
+                <p><strong>What is notable here:</strong> This was not about learning more product knowledge or improving language skills. It was about having a systematic way to approach each conversation. The framework made the constraint (technical complexity plus bilingual communication) into a solvable pattern rather than a daily struggle.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">• • •</div>
+        
+        <div class="judgment-gate">
+            <h3>Judgment Gate: 3 Tests Before You Build</h3>
+            
+            <ol>
+                <li><strong>Is the problem defined as a decision?</strong><br>"Make better presentations" fails. "Choose which 3 data points matter most" passes.</li>
+                <li><strong>Is a boundary named explicitly?</strong><br>"Improve communication" fails. "Explain in under 2 minutes to non-technical clients" passes.</li>
+                <li><strong>Is the primary metric's penalty clear?</strong><br>"Increase engagement" fails. "Reduce time-to-close (penalty: extended sales cycles cost $X per week)" passes.</li>
+            </ol>
+            
+            <p>These are not steps in a process. They are criteria you use to judge whether a framework will actually work before you waste time building it. Most AI outputs fail all three tests, which is why they feel generic and do not transfer across situations.</p>
+        </div>
+
+        <div class="section-divider">• • •</div>
+        
+        <div class="micro-win">
+            <h3>3-Minute Micro-Win</h3>
+            <p>Try this right now with something you are working on:</p>
+            
+            <p><strong>Take your current AI output</strong> (anything you are using for work: email template, presentation outline, process documentation)</p>
+            
+            <p><strong>Rewrite the core problem as a decision question:</strong></p>
+            <div class="before-after">
+                <div class="before">
+                    <div class="before-label">Before:</div>
+                    "Improve our onboarding"
+                </div>
+                <div class="after">
+                    <div class="after-label">After:</div>
+                    "Should we prioritize product training or relationship building in week 1?"
+                </div>
+            </div>
+            
+            <p><strong>Name one boundary:</strong><br>"Must complete in 5 business days with zero IT support needed"</p>
+            
+            <p><strong>Pick your primary metric and state what it penalizes:</strong><br>"Time to first productive output (penalty: each extra week delays revenue by $X)"</p>
+            
+            <p>Notice the difference? The "after" version can actually be evaluated. The "before" version just generates more generic advice.</p>
+        </div>
+
+        <div class="section-divider">• • •</div>
+        
+        <h2>What Decision Are You Making This Week?</h2>
+        
+        <p>What decision are you making this week that still feels fuzzy? Reply with one sentence. I read every response and use the best ones (anonymized) for future case studies.</p>
+        
+        <div class="blog-highlight">
+            <p><strong>Issue #1 is free forever on RageDesigner.com</strong><br>Future issues delivered weekly to subscribers only.</p>
+        </div>
+    </article>
+    
+    <section class="blog-cta-section">
+        <div class="blog-cta-content">
+            <h3>Learn the Systematic Thinking Methodology</h3>
+            <p>Discover how to build frameworks that create consistent results with AI</p>
+            <a href="https://whatisaframework.com" class="blog-cta-button">Explore Strategic Thinking Academy</a>
+            <a href="https://ragedesigner.com/contact/" class="blog-cta-button secondary">Book Framework Diagnostic</a>
+            <p style="margin-top: var(--space-3); font-size: var(--text-sm); color: var(--charcoal-light);">Framework Diagnostic: Lite $750 / Full $1,500 (credits toward Academy enrollment)</p>
+        </div>
+    </section>
+    
+    <section class="blog-newsletter">
+        <div class="blog-newsletter-content">
+            <h3>Subscribe to Framework Builder Weekly</h3>
+            <p>Weekly insights on systematic thinking and framework development.</p>
+            <form class="blog-newsletter-form" action="https://ragedesigner.com/newsletter-sign-up/" method="GET">
+                <input type="email" name="email" placeholder="Your email address" class="blog-newsletter-input" required>
+                <button type="submit" class="blog-newsletter-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">RAGE<span>DESIGNER</span></div>
+                <p>Strategic Design & Marketing Intelligence since 1999. Building systems that compound.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/foundation-services.html">Foundation Services</a></li>
+                    <li><a href="/integrated-solutions.html">Integrated Solutions</a></li>
+                    <li><a href="/consulting.html">Strategic Consulting</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="https://whatisaframework.com" target="_blank">What Is A Framework?</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://ragedesigner.com/contact/">Contact</a></li>
+                    <li><a href="https://ragedesigner.com/newsletter-sign-up/">Newsletter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 RageDesigner</p>
+        </div>
+    </footer>
+</body>
+</html>
