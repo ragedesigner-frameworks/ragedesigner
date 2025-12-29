@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Podcast Producer Framework | RageDesigner</title>
+    <meta name="description" content="Producer methodology that transforms executive thinking sessions into compelling strategic intelligence that accelerates decision-making.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal-blue: #1A2332;
+            --logo-blue: #325d74;
+            --copper: #B7704F;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --logo-blue-light: rgba(50, 93, 116, 0.1);
+            --charcoal-medium: rgba(26, 35, 50, 0.85);
+            --charcoal-light: rgba(26, 35, 50, 0.6);
+            --text-xs: 0.688rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-md: 1.125rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.563rem;
+            --text-2xl: 1.953rem;
+            --text-3xl: 2.441rem;
+            --text-5xl: 3.815rem;
+            --leading-tight: 1.25;
+            --leading-normal: 1.6;
+            --leading-relaxed: 1.75;
+            --space-2: 16px;
+            --space-3: 24px;
+            --space-4: 32px;
+            --space-5: 40px;
+            --space-6: 48px;
+            --space-7: 56px;
+            --space-10: 80px;
+            --space-12: 96px;
+            --space-15: 120px;
+            --nav-height: 70px;
+            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08);
+            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.06);
+            --shadow-xl: 0 12px 32px rgba(26, 35, 50, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; font-size: var(--text-base); line-height: var(--leading-normal); color: var(--charcoal-blue); background: var(--white); }
+        nav {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            padding: var(--space-2) var(--space-6);
+            border-bottom: 1px solid var(--logo-blue-light);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--nav-height);
+        }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-text { font-size: var(--text-xl); font-weight: 700; color: var(--charcoal-blue); letter-spacing: 0.05em; }
+        .logo-text span { color: var(--logo-blue); }
+        .nav-links { display: flex; align-items: center; gap: var(--space-4); }
+        .nav-links a { color: var(--charcoal-light); text-decoration: none; font-weight: 500; transition: color 0.2s ease; position: relative; }
+        .nav-links a:not(.nav-cta)::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--logo-blue);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--logo-blue); }
+        .nav-cta { display: inline-block; background: var(--logo-blue); color: var(--white) !important; padding: 12px var(--space-3); font-size: var(--text-sm); font-weight: 600; border-radius: 8px; border: 2px solid var(--logo-blue); transition: all 0.3s ease; }
+        .nav-cta:hover { background: transparent; color: var(--logo-blue) !important; transform: translateY(-2px); }
+        .hero { 
+            background: var(--charcoal-blue); 
+            color: var(--white); 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--nav-height) + var(--space-10)) var(--space-3) var(--space-10);
+        }
+        .hero-content { max-width: 820px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-4); }
+        .hero-subtitle { font-size: clamp(var(--text-md), 3vw, var(--text-xl)); max-width: 650px; margin: 0 auto var(--space-6); color: var(--white); line-height: var(--leading-normal); }
+        .btn-primary { display: inline-block; background: var(--copper); color: var(--white); padding: var(--space-2) var(--space-6); font-size: var(--text-md); font-weight: 600; text-decoration: none; border-radius: 8px; border: 2px solid var(--copper); transition: all 0.3s ease; margin-right: var(--space-3); margin-bottom: var(--space-2); }
+        .btn-primary:hover { background: transparent; color: var(--copper); transform: translateY(-2px); }
+        .btn-secondary { display: inline-block; background: transparent; color: var(--white); padding: var(--space-2) var(--space-6); font-size: var(--text-md); font-weight: 600; text-decoration: none; border-radius: 8px; border: 2px solid var(--white); transition: all 0.3s ease; margin-bottom: var(--space-2); }
+        .btn-secondary:hover { background: var(--white); color: var(--charcoal-blue); transform: translateY(-2px); }
+        section { padding: var(--space-15) var(--space-3); }
+        .container { max-width: 820px; margin: 0 auto; }
+        .container-wide { max-width: 1100px; margin: 0 auto; }
+        h2 { font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl)); color: var(--charcoal-blue); margin-bottom: var(--space-5); font-weight: 700; text-align: center; }
+        h3 { font-size: var(--text-xl); color: var(--charcoal-blue); margin-bottom: var(--space-3); font-weight: 700; }
+        p { font-size: var(--text-md); line-height: var(--leading-relaxed); margin-bottom: var(--space-3); color: var(--charcoal-medium); }
+        .problem-solution { background: var(--white); }
+        .ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-top: var(--space-7); }
+        .ps-card { background: var(--light-gray); border-radius: 12px; padding: var(--space-6); }
+        .ps-card h3 { color: var(--logo-blue); margin-bottom: var(--space-4); }
+        .ps-card ul { list-style: none; }
+        .ps-card li { padding: var(--space-2) 0; border-bottom: 1px solid var(--logo-blue-light); color: var(--charcoal-medium); font-size: var(--text-base); line-height: var(--leading-relaxed); }
+        .ps-card li:last-child { border-bottom: none; }
+        .services { background: var(--light-gray); }
+        .services-intro { text-align: center; max-width: 700px; margin: 0 auto var(--space-7); color: var(--charcoal-medium); }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+        .service-card { background: var(--white); border-radius: 12px; padding: var(--space-6); box-shadow: var(--shadow-md); display: flex; flex-direction: column; }
+        .service-card h3 { color: var(--logo-blue); margin-bottom: var(--space-2); }
+        .service-price { font-size: var(--text-2xl); color: var(--copper); font-weight: 700; margin-bottom: var(--space-2); }
+        .service-ideal { font-size: var(--text-sm); color: var(--charcoal-light); font-style: italic; margin-bottom: var(--space-4); }
+        .service-card ul { list-style: none; margin-bottom: var(--space-4); flex-grow: 1; }
+        .service-card li { padding: var(--space-2) 0; border-bottom: 1px solid var(--logo-blue-light); color: var(--charcoal-medium); font-size: var(--text-sm); line-height: var(--leading-relaxed); }
+        .service-card li:last-child { border-bottom: none; }
+        .service-deliverable { font-size: var(--text-sm); color: var(--charcoal-blue); font-weight: 600; margin-bottom: var(--space-4); padding: var(--space-3); background: var(--light-gray); border-radius: 8px; }
+        .service-cta { display: inline-block; background: var(--logo-blue); color: var(--white); padding: 14px var(--space-4); font-size: var(--text-base); font-weight: 600; text-decoration: none; border-radius: 8px; text-align: center; transition: all 0.3s ease; border: 2px solid var(--logo-blue); }
+        .service-cta:hover { background: transparent; color: var(--logo-blue); }
+        .results { background: var(--white); }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); margin-top: var(--space-7); }
+        .result-card { background: var(--light-gray); border-radius: 12px; padding: var(--space-5); border-top: 4px solid var(--copper); }
+        .result-card h3 { color: var(--charcoal-blue); font-size: var(--text-lg); margin-bottom: var(--space-3); }
+        .result-card p { margin-bottom: 0; font-size: var(--text-base); }
+        .how-it-works { background: var(--charcoal-blue); color: var(--white); }
+        .how-it-works h2 { color: var(--white); }
+        .hiw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); margin-top: var(--space-7); }
+        .hiw-card { background: rgba(255,255,255,0.05); border-radius: 12px; padding: var(--space-5); border: 1px solid rgba(255,255,255,0.1); }
+        .hiw-card h3 { color: var(--copper); margin-bottom: var(--space-3); font-size: var(--text-lg); }
+        .hiw-card p { color: rgba(255,255,255,0.8); margin-bottom: 0; font-size: var(--text-base); }
+        .cta-section { background: var(--logo-blue); color: var(--white); text-align: center; }
+        .cta-section h2 { color: var(--white); }
+        .cta-section p { color: var(--white); max-width: 600px; margin: 0 auto var(--space-6); font-size: var(--text-lg); }
+        .cta-section .btn-primary { background: var(--white); color: var(--logo-blue); border-color: var(--white); }
+        .cta-section .btn-primary:hover { background: transparent; color: var(--white); }
+        .faq { background: var(--light-gray); }
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--white); border-radius: 8px; margin-bottom: var(--space-3); padding: var(--space-5); }
+        .faq-question { font-size: var(--text-lg); font-weight: 600; color: var(--charcoal-blue); margin-bottom: var(--space-3); }
+        .faq-answer { color: var(--charcoal-medium); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: 0; }
+        .final-cta { background: var(--charcoal-blue); color: var(--white); text-align: center; }
+        .final-cta h2 { color: var(--white); }
+        .final-cta p { color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto var(--space-6); font-size: var(--text-lg); }
+        footer {
+            padding: var(--space-10) var(--space-3) var(--space-5);
+            background: #0f151d;
+            color: var(--white);
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-6);
+            margin-bottom: var(--space-7);
+        }
+        .footer-brand .footer-logo {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+            letter-spacing: 0.05em;
+        }
+        .footer-brand .footer-logo span { color: var(--logo-blue); }
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: var(--text-base);
+            margin-bottom: 0;
+        }
+        .footer-column h4 {
+            color: var(--white);
+            font-size: var(--text-base);
+            font-weight: 600;
+            margin-bottom: var(--space-3);
+        }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: var(--space-2); }
+        .footer-column a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: var(--text-base);
+            transition: color 0.2s ease;
+        }
+        .footer-column a:hover { color: var(--copper); }
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-5);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-bottom p {
+            font-size: var(--text-sm);
+            margin-bottom: 0;
+            color: var(--copper);
+        }
+        @media (max-width: 900px) {
+            .ps-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr; }
+            .hiw-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+        }
+        @media (max-width: 768px) {
+            nav { padding: var(--space-2) var(--space-3); }
+            .hero { min-height: 100vh; padding: calc(var(--nav-height) + var(--space-6)) var(--space-3) var(--space-6); }
+            section { padding: var(--space-12) var(--space-3); }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .nav-cta { padding: 10px var(--space-2); font-size: var(--text-xs); }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link"><span class="logo-text">RAGE<span>DESIGNER</span></span></a>
+        <div class="nav-links">
+            <a href="/portfolio.html">Portfolio</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://ragedesigner.com/contact/" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Strategic Conversations Become Breakthrough Content</h1>
+            <p class="hero-subtitle">Producer methodology that transforms executive thinking sessions into compelling strategic intelligence that accelerates decision-making.</p>
+            <a href="https://ragedesigner.com/contact/" class="btn-primary">Experience Producer Session</a>
+            <a href="#services" class="btn-secondary">Explore Programs</a>
+        </div>
+    </section>
+    
+    <section class="problem-solution">
+        <div class="container-wide">
+            <h2>Your Best Strategic Thinking Should Not Disappear After Conversations</h2>
+            <div class="ps-grid">
+                <div class="ps-card">
+                    <h3>The Problem</h3>
+                    <ul>
+                        <li>Your best strategic insights happen in conversation, then disappear</li>
+                        <li>Content that does not reflect your real intellectual capability</li>
+                        <li>Strategic intelligence scattered across conversations with no synthesis</li>
+                        <li>Missed opportunities to accelerate learning through reflection</li>
+                    </ul>
+                </div>
+                <div class="ps-card">
+                    <h3>The Solution</h3>
+                    <ul>
+                        <li>Dual-track producer methodology for discovery orchestration and breakthrough collection</li>
+                        <li>5-minute synthesis episodes delivered within 24 hours of strategic sessions</li>
+                        <li>Strategic intelligence library development for organizational learning</li>
+                        <li>Multi-session breakthrough archaeology connecting insights over time</li>
+                        <li>Narrative architecture that transforms thinking into compelling content</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services" id="services">
+        <div class="container-wide">
+            <h2>Strategic Podcast Producer Services</h2>
+            <p class="services-intro">Choose the level of strategic intelligence capture that matches your needs</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Discovery Session Package</h3>
+                    <div class="service-price">$3,500</div>
+                    <div class="service-ideal">Perfect for: Thought leaders testing producer methodology for strategic content</div>
+                    <ul>
+                        <li>Single strategic session with dual-track producer methodology</li>
+                        <li>5-minute synthesis episode delivered within 24 hours</li>
+                        <li>Framework documentation for internal use</li>
+                        <li>Strategic intelligence extraction and organization</li>
+                        <li>Breakthrough pattern identification</li>
+                    </ul>
+                    <div class="service-deliverable">Deliverable: Professional synthesis episode with strategic intelligence documentation</div>
+                    <a href="https://ragedesigner.com/contact/" class="service-cta">Experience Discovery</a>
+                </div>
+                <div class="service-card">
+                    <h3>Executive Intelligence Series</h3>
+                    <div class="service-price">$12,500</div>
+                    <div class="service-ideal">Perfect for: Executives building strategic intelligence library for organizational learning</div>
+                    <ul>
+                        <li>Monthly strategic sessions with breakthrough collection</li>
+                        <li>Quarterly synthesis episodes for strategic reflection</li>
+                        <li>Strategic intelligence library development</li>
+                        <li>6-month systematic approach to capturing executive thinking</li>
+                        <li>Cross-session breakthrough archaeology</li>
+                        <li>Framework generation and documentation</li>
+                        <li>Organizational knowledge preservation</li>
+                    </ul>
+                    <div class="service-deliverable">Deliverable: Comprehensive strategic intelligence library with synthesis episodes</div>
+                    <a href="https://ragedesigner.com/contact/" class="service-cta">Build Intelligence Library</a>
+                </div>
+                <div class="service-card">
+                    <h3>Strategic Partnership Program</h3>
+                    <div class="service-price">$25,000</div>
+                    <div class="service-ideal">Perfect for: Organizations needing continuous strategic intelligence capture and acceleration</div>
+                    <ul>
+                        <li>Weekly producer sessions with continuous intelligence collection</li>
+                        <li>Multi-session breakthrough archaeology and synthesis</li>
+                        <li>Strategic intelligence system development for organization</li>
+                        <li>12-month strategic thinking acceleration partnership</li>
+                        <li>Framework methodology training for internal teams</li>
+                        <li>Compound intelligence building over time</li>
+                        <li>Executive presence enhancement through synthesis reflection</li>
+                    </ul>
+                    <div class="service-deliverable">Deliverable: Enterprise strategic intelligence infrastructure with continuous acceleration</div>
+                    <a href="https://ragedesigner.com/contact/" class="service-cta">Partner for Intelligence</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="results">
+        <div class="container-wide">
+            <h2>Proven Results That Accelerate Strategic Intelligence</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>Breakthrough Pattern Recognition Increased 3x</h3>
+                    <p>Clients report dramatically improved ability to identify breakthrough opportunities during strategic thinking sessions. The producer methodology trains pattern recognition that compounds over time.</p>
+                </div>
+                <div class="result-card">
+                    <h3>Synthesis Episodes Accelerate Learning</h3>
+                    <p>Executive teams using synthesis episodes report faster strategic alignment and more confident decision-making. The ability to revisit breakthrough thinking in compelling narrative form accelerates organizational learning.</p>
+                </div>
+                <div class="result-card">
+                    <h3>Discovery Orchestration Produces Consistent Innovation</h3>
+                    <p>Rather than waiting for accidental breakthrough moments, the producer methodology creates conditions for systematic discovery. Organizations report predictable innovation cycles instead of random insight generation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works">
+        <div class="container-wide">
+            <h2>Why Strategic Podcast Producer Framework Works</h2>
+            <div class="hiw-grid">
+                <div class="hiw-card">
+                    <h3>Dual-Track Intelligence Collection</h3>
+                    <p>While delivering normal strategic intelligence, the producer methodology simultaneously tracks breakthrough moments in the background. This creates synthesis readiness without interrupting the natural flow of strategic thinking.</p>
+                </div>
+                <div class="hiw-card">
+                    <h3>Narrative Architecture for Breakthrough Content</h3>
+                    <p>Rather than generic content creation, the framework builds compelling narrative from actual discovery moments. Synthesis episodes capture the authentic excitement of breakthrough thinking because they are based on real strategic intelligence.</p>
+                </div>
+                <div class="hiw-card">
+                    <h3>Compound Intelligence Over Time</h3>
+                    <p>Multi-session producer capability tracks how your strategic thinking develops across conversations. Each synthesis episode contributes to organizational knowledge that accelerates future strategic work through systematic intelligence building.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Strategic Conversations Into Intelligence?</h2>
+            <p>Experience a producer session to discover how breakthrough collection and synthesis can capture your best strategic thinking and accelerate organizational learning.</p>
+            <a href="https://ragedesigner.com/contact/" class="btn-primary">Book Producer Session</a>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">How is this different from regular podcast production?</div>
+                    <p class="faq-answer">Regular podcast production focuses on audio quality and editing. Strategic Podcast Producer Framework orchestrates discovery during conversations, tracks breakthrough moments in real-time, and synthesizes strategic intelligence into compelling narrative. You are not recording conversations; you are engineering breakthrough conditions and capturing strategic value.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if my strategic sessions do not produce breakthroughs?</div>
+                    <p class="faq-answer">The producer methodology is designed to orchestrate discovery, not just capture it. Through systematic breakthrough pattern recognition and strategic question design, we create conditions for genuine insight generation. If a session does not produce synthesis-worthy breakthroughs, we do not force artificial content.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does multi-session breakthrough archaeology work?</div>
+                    <p class="faq-answer">The framework tracks strategic insights across multiple conversations, identifying patterns and connections that emerge over time. This compound intelligence capability reveals how your thinking evolves systematically, creating meta-insights about your strategic methodology that accelerate future decision-making.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can this work for team strategic sessions?</div>
+                    <p class="faq-answer">Absolutely. The Strategic Partnership Program specializes in organizational strategic intelligence capture. Team sessions produce rich synthesis episodes that preserve collective breakthrough thinking and accelerate organizational learning through documented strategic intelligence.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What format are the synthesis episodes delivered in?</div>
+                    <p class="faq-answer">Synthesis episodes are delivered as 5-minute audio segments with enthusiastic discovery energy, optimized for background listening during commutes or workouts. They are also provided as written transcripts with strategic intelligence documentation for organizational knowledge preservation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="final-cta">
+        <div class="container">
+            <h2>Capture Your Best Strategic Thinking</h2>
+            <p>Your breakthrough moments deserve systematic capture and compelling synthesis. Experience a producer session today and discover what strategic intelligence acceleration can do for your organization.</p>
+            <a href="https://ragedesigner.com/contact/" class="btn-primary">Start Capturing Intelligence</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">RAGE<span>DESIGNER</span></div>
+                <p>Strategic Design & Marketing Intelligence since 1999. Building systems that compound.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/foundation-services.html">Foundation Services</a></li>
+                    <li><a href="/integrated-solutions.html">Integrated Solutions</a></li>
+                    <li><a href="/consulting.html">Strategic Consulting</a></li>
+                    <li><a href="/podcast-producer.html">Podcast Producer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="https://whatisaframework.com" target="_blank">What Is A Framework?</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://ragedesigner.com/contact/">Contact</a></li>
+                    <li><a href="https://ragedesigner.com/newsletter-sign-up/">Newsletter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 RageDesigner</p>
+        </div>
+    </footer>
+</body>
+</html>
