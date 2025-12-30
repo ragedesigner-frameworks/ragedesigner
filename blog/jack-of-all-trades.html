@@ -5,365 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Jack of All Trades Beats Master of One | RageDesigner</title>
     <meta name="description" content="For 25 years, I've been told to niche down. But being good at multiple things isn't a weakness. It's your unfair advantage.">
-    <meta property="og:title" content="Why Jack of All Trades Beats Master of One | RageDesigner">
-    <meta property="og:description" content="For 25 years, I've been told to niche down. But being good at multiple things isn't a weakness. It's your unfair advantage.">
-    <meta property="og:url" content="https://ragedesigner.com/blog/jack-of-all-trades">
-    <meta property="og:type" content="article">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --charcoal-blue: #1A2332;
-            --logo-blue: #325d74;
-            --copper: #B7704F;
-            --white: #ffffff;
-            --light-gray: #f5f5f5;
-            --logo-blue-light: rgba(50, 93, 116, 0.1);
-            --charcoal-medium: rgba(26, 35, 50, 0.85);
-            --charcoal-light: rgba(26, 35, 50, 0.6);
-            --text-xs: 0.688rem;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-md: 1.125rem;
-            --text-lg: 1.25rem;
-            --text-xl: 1.563rem;
-            --text-2xl: 1.953rem;
-            --text-3xl: 2.441rem;
-            --text-5xl: 3.815rem;
-            --leading-tight: 1.25;
-            --leading-normal: 1.6;
-            --leading-relaxed: 1.75;
-            --space-1: 8px;
-            --space-2: 16px;
-            --space-3: 24px;
-            --space-4: 32px;
-            --space-5: 40px;
-            --space-6: 48px;
-            --space-7: 56px;
-            --space-10: 80px;
-            --space-12: 96px;
-            --space-15: 120px;
-            --space-20: 160px;
-            --nav-height: 70px;
-            --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08);
-            --shadow-md: 0 4px 12px rgba(26, 35, 50, 0.06);
-            --shadow-xl: 0 12px 32px rgba(26, 35, 50, 0.1);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: var(--text-base);
-            line-height: var(--leading-normal);
-            color: var(--charcoal-blue);
-            background: var(--white);
-        }
-        nav {
-            background: var(--white);
-            padding: var(--space-2) var(--space-6);
-            border-bottom: 1px solid var(--logo-blue-light);
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: var(--nav-height);
-        }
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-text { font-size: var(--text-xl); font-weight: 700; color: var(--charcoal-blue); letter-spacing: 0.05em; }
-        .logo-text span { color: var(--logo-blue); }
-        .nav-links { display: flex; align-items: center; gap: var(--space-4); }
-        .nav-links a { color: var(--charcoal-light); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
-        .nav-links a:hover { color: var(--logo-blue); }
-        .nav-cta {
-            display: inline-block; background: var(--logo-blue); color: var(--white) !important;
-            padding: 12px var(--space-3); font-size: var(--text-sm); font-weight: 600;
-            border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--logo-blue);
-        }
-        .nav-cta:hover { background: transparent; color: var(--logo-blue) !important; transform: translateY(-2px); }
-        .nav-links a:not(.nav-cta) { position: relative; }
-        .nav-links a:not(.nav-cta)::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--logo-blue); transition: width 0.3s ease; }
-        .nav-links a:not(.nav-cta):hover::after { width: 100%; }
-        
-        .blog-hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: calc(var(--nav-height) + var(--space-10)) var(--space-3) var(--space-10);
-            color: var(--white);
-            position: relative;
-            background-image: url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-Jack-of-all-trades.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        .blog-hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-        .blog-hero > * { position: relative; z-index: 2; }
-        .blog-hero-meta {
-            font-size: var(--text-sm);
-            color: var(--copper);
-            font-weight: 700;
-            margin-bottom: var(--space-3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .blog-hero-title {
-            font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl));
-            font-weight: 700;
-            line-height: var(--leading-tight);
-            margin-bottom: var(--space-4);
-            max-width: 900px;
-        }
-        .blog-hero-subtitle {
-            font-size: clamp(var(--text-md), 3vw, var(--text-xl));
-            color: var(--white);
-            max-width: 700px;
-            line-height: var(--leading-normal);
-        }
-        
-        .blog-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: var(--space-15) var(--space-3);
-        }
-        .blog-content p {
-            font-size: var(--text-md);
-            line-height: var(--leading-relaxed);
-            color: var(--charcoal-medium);
-            margin-bottom: var(--space-4);
-        }
-        .blog-content p.lead {
-            font-size: var(--text-lg);
-            color: var(--charcoal-blue);
-        }
-        .blog-content h2 {
-            font-size: var(--text-2xl);
-            color: var(--charcoal-blue);
-            font-weight: 700;
-            margin: var(--space-10) 0 var(--space-4) 0;
-            line-height: var(--leading-tight);
-        }
-        .blog-content h3 {
-            font-size: var(--text-xl);
-            color: var(--charcoal-blue);
-            font-weight: 600;
-            margin: var(--space-6) 0 var(--space-3) 0;
-            line-height: var(--leading-snug);
-        }
-        .blog-content ul,
-        .blog-content ol {
-            margin: var(--space-4) 0;
-            padding-left: var(--space-5);
-        }
-        .blog-content li {
-            font-size: var(--text-md);
-            line-height: var(--leading-relaxed);
-            color: var(--charcoal-medium);
-            margin-bottom: var(--space-2);
-        }
-        .blog-content li strong { color: var(--charcoal-blue); }
-        
-        .blog-pull-quote {
-            background: var(--light-gray);
-            border-left: 4px solid var(--copper);
-            padding: var(--space-5) var(--space-6);
-            margin: var(--space-10) 0;
-            font-size: var(--text-lg);
-            font-style: italic;
-            color: var(--charcoal-medium);
-            line-height: var(--leading-relaxed);
-        }
-        
-        .blog-highlight {
-            background: #fef9f3;
-            border-left: 4px solid var(--copper);
-            padding: var(--space-5);
-            margin: var(--space-6) 0;
-            border-radius: 4px;
-        }
-        .blog-highlight p {
-            color: var(--charcoal-blue);
-            margin: 0;
-        }
-        .blog-highlight strong { color: var(--charcoal-blue); }
-        
-        .blog-inline-image {
-            float: right;
-            max-width: 400px;
-            height: auto;
-            margin: var(--space-6) 0 var(--space-4) var(--space-5);
-            border-radius: 8px;
-        }
-        
-        .blog-author {
-            max-width: 800px;
-            margin: var(--space-15) auto;
-            padding: var(--space-6) var(--space-5);
-            background: var(--light-gray);
-            border-radius: 8px;
-        }
-        .blog-author p {
-            font-size: var(--text-base);
-            color: var(--charcoal-medium);
-            line-height: var(--leading-relaxed);
-            margin: 0;
-        }
-        .blog-author a {
-            color: var(--logo-blue);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .blog-author a:hover { text-decoration: underline; }
-        
-        .blog-cta-section {
-            background: var(--light-gray);
-            padding: var(--space-15) var(--space-3);
-            text-align: center;
-        }
-        .blog-cta-content { max-width: 800px; margin: 0 auto; }
-        .blog-cta-section h3 {
-            font-size: var(--text-2xl);
-            color: var(--charcoal-blue);
-            margin: 0 0 var(--space-3) 0;
-        }
-        .blog-cta-section p {
-            font-size: var(--text-md);
-            color: var(--charcoal-medium);
-            margin: 0 0 var(--space-5) 0;
-        }
-        .blog-cta-button {
-            display: inline-block;
-            padding: var(--space-2) var(--space-6);
-            background: var(--copper);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: var(--text-md);
-            transition: all 0.3s ease;
-            border: 2px solid var(--copper);
-        }
-        .blog-cta-button:hover {
-            background: transparent;
-            color: var(--copper);
-            transform: translateY(-2px);
-        }
-        
-        .blog-newsletter {
-            background: var(--charcoal-blue);
-            padding: var(--space-15) var(--space-3);
-            text-align: center;
-        }
-        .blog-newsletter-content { max-width: 600px; margin: 0 auto; }
-        .blog-newsletter h3 {
-            font-size: var(--text-2xl);
-            color: var(--white);
-            margin: 0 0 var(--space-2) 0;
-        }
-        .blog-newsletter p {
-            font-size: var(--text-md);
-            color: rgba(255, 255, 255, 0.8);
-            margin: 0 0 var(--space-4) 0;
-        }
-        .blog-newsletter-form {
-            display: flex;
-            gap: var(--space-1);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .blog-newsletter-input {
-            flex: 1;
-            padding: 14px 20px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            font-family: inherit;
-            font-size: var(--text-base);
-        }
-        .blog-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.5); }
-        .blog-newsletter-button {
-            padding: 14px 32px;
-            background: var(--copper);
-            color: var(--white);
-            border: 2px solid var(--copper);
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .blog-newsletter-button:hover {
-            background: transparent;
-            color: var(--copper);
-        }
-        
-        footer { padding: var(--space-10) var(--space-3) var(--space-5); background: #0f151d; color: var(--white); }
-        .footer-content { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-6); margin-bottom: var(--space-7); }
-        .footer-brand .footer-logo { font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-3); letter-spacing: 0.05em; }
-        .footer-brand .footer-logo span { color: var(--logo-blue); }
-        .footer-brand p { color: rgba(255,255,255,0.6); font-size: var(--text-base); margin-bottom: 0; }
-        .footer-column h4 { color: var(--white); font-size: var(--text-base); font-weight: 600; margin-bottom: var(--space-3); }
-        .footer-column ul { list-style: none; }
-        .footer-column li { margin-bottom: var(--space-2); }
-        .footer-column a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: var(--text-base); transition: color 0.2s ease; }
-        .footer-column a:hover { color: var(--copper); }
-        .footer-bottom { text-align: center; padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); }
-        .footer-bottom p { font-size: var(--text-sm); margin-bottom: 0; color: var(--copper); }
-        @media (max-width: 900px) { .footer-content { grid-template-columns: 1fr 1fr; gap: var(--space-5); } }
-        
-        @media (max-width: 768px) {
-            nav { padding: var(--space-2) var(--space-3); }
-            .blog-hero { min-height: 80vh; padding: calc(var(--nav-height) + var(--space-6)) var(--space-3) var(--space-6); }
-            .blog-content { padding: var(--space-12) var(--space-3); }
-            .blog-inline-image {
-                float: none;
-                max-width: 100%;
-                margin: var(--space-6) auto;
-                display: block;
-            }
-            .blog-newsletter-form { flex-direction: column; }
-            .nav-links a:not(.nav-cta) { display: none; }
-            .nav-cta { padding: 10px var(--space-2); font-size: var(--text-xs); }
-            .footer-content { grid-template-columns: 1fr; text-align: center; }
-        }
+        :root{--charcoal-blue:#1A2332;--logo-blue:#325d74;--copper:#B7704F;--white:#fff;--light-gray:#f5f5f5;--logo-blue-light:rgba(50,93,116,0.1);--charcoal-medium:rgba(26,35,50,0.85);--charcoal-light:rgba(26,35,50,0.6);--text-xs:0.688rem;--text-sm:0.875rem;--text-base:1rem;--text-md:1.125rem;--text-lg:1.25rem;--text-xl:1.563rem;--text-2xl:1.953rem;--text-3xl:2.441rem;--text-5xl:3.815rem;--leading-tight:1.25;--leading-normal:1.6;--leading-relaxed:1.75;--space-1:8px;--space-2:16px;--space-3:24px;--space-4:32px;--space-5:40px;--space-6:48px;--space-7:56px;--space-10:80px;--space-12:96px;--space-15:120px;--nav-height:70px;--shadow-sm:0 1px 3px rgba(26,35,50,0.08)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Roboto',-apple-system,BlinkMacSystemFont,sans-serif;font-size:var(--text-base);line-height:var(--leading-normal);color:var(--charcoal-blue);background:var(--white)}
+        nav{background:var(--white);padding:var(--space-2) var(--space-6);border-bottom:1px solid var(--logo-blue-light);position:fixed;top:0;left:0;right:0;z-index:100;box-shadow:var(--shadow-sm);display:flex;justify-content:space-between;align-items:center;height:var(--nav-height)}
+        .logo-link{display:flex;align-items:center;text-decoration:none}
+        .logo-text{font-size:var(--text-xl);font-weight:700;color:var(--charcoal-blue);letter-spacing:0.05em}
+        .logo-text span{color:var(--logo-blue)}
+        .nav-links{display:flex;align-items:center;gap:var(--space-4)}
+        .nav-links a{color:var(--charcoal-light);text-decoration:none;font-weight:500;transition:color 0.2s ease}
+        .nav-links a:hover{color:var(--logo-blue)}
+        .nav-cta{display:inline-block;background:var(--logo-blue);color:var(--white)!important;padding:12px var(--space-3);font-size:var(--text-sm);font-weight:600;border-radius:8px;transition:all 0.3s ease;border:2px solid var(--logo-blue)}
+        .nav-cta:hover{background:transparent;color:var(--logo-blue)!important;transform:translateY(-2px)}
+        .nav-links a:not(.nav-cta){position:relative}
+        .nav-links a:not(.nav-cta)::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--logo-blue);transition:width 0.3s ease}
+        .nav-links a:not(.nav-cta):hover::after{width:100%}
+        .blog-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-height) + var(--space-10)) var(--space-3) var(--space-10);color:var(--white);position:relative;background-image:url('https://app.ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-Jack-of-all-trades.png');background-size:cover;background-position:center}
+        .blog-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:1}
+        .blog-hero>*{position:relative;z-index:2}
+        .blog-hero-meta{font-size:var(--text-sm);color:var(--copper);font-weight:700;margin-bottom:var(--space-3);text-transform:uppercase;letter-spacing:1px}
+        .blog-hero-title{font-size:clamp(var(--text-3xl),6vw,var(--text-5xl));font-weight:700;line-height:var(--leading-tight);margin-bottom:var(--space-4);max-width:900px}
+        .blog-hero-subtitle{font-size:clamp(var(--text-md),3vw,var(--text-xl));color:var(--white);max-width:700px;line-height:var(--leading-normal)}
+        .blog-content{max-width:800px;margin:0 auto;padding:var(--space-15) var(--space-3)}
+        .blog-content p{font-size:var(--text-md);line-height:var(--leading-relaxed);color:var(--charcoal-medium);margin-bottom:var(--space-4)}
+        .blog-content p.lead{font-size:var(--text-lg);color:var(--charcoal-blue)}
+        .blog-content h2{font-size:var(--text-2xl);color:var(--charcoal-blue);font-weight:700;margin:var(--space-10) 0 var(--space-4) 0;line-height:var(--leading-tight)}
+        .blog-content h3{font-size:var(--text-xl);color:var(--charcoal-blue);font-weight:600;margin:var(--space-6) 0 var(--space-3) 0}
+        .blog-content ul,.blog-content ol{margin:var(--space-4) 0;padding-left:var(--space-5)}
+        .blog-content li{font-size:var(--text-md);line-height:var(--leading-relaxed);color:var(--charcoal-medium);margin-bottom:var(--space-2)}
+        .blog-content li strong{color:var(--charcoal-blue)}
+        .blog-pull-quote{background:var(--light-gray);border-left:4px solid var(--copper);padding:var(--space-5) var(--space-6);margin:var(--space-10) 0;font-size:var(--text-lg);font-style:italic;color:var(--charcoal-medium);line-height:var(--leading-relaxed)}
+        .blog-highlight{background:#fef9f3;border-left:4px solid var(--copper);padding:var(--space-5);margin:var(--space-6) 0;border-radius:4px}
+        .blog-highlight p{color:var(--charcoal-blue);margin:0}
+        .blog-inline-image{float:right;max-width:400px;height:auto;margin:var(--space-6) 0 var(--space-4) var(--space-5);border-radius:8px}
+        .blog-author{max-width:800px;margin:var(--space-15) auto;padding:var(--space-6) var(--space-5);background:var(--light-gray);border-radius:8px}
+        .blog-author p{font-size:var(--text-base);color:var(--charcoal-medium);line-height:var(--leading-relaxed);margin:0}
+        .blog-cta-section{background:var(--light-gray);padding:var(--space-15) var(--space-3);text-align:center}
+        .blog-cta-content{max-width:800px;margin:0 auto}
+        .blog-cta-section h3{font-size:var(--text-2xl);color:var(--charcoal-blue);margin:0 0 var(--space-3) 0}
+        .blog-cta-section p{font-size:var(--text-md);color:var(--charcoal-medium);margin:0 0 var(--space-5) 0}
+        .blog-cta-button{display:inline-block;padding:var(--space-2) var(--space-6);background:var(--copper);color:var(--white);text-decoration:none;border-radius:8px;font-weight:600;font-size:var(--text-md);transition:all 0.3s ease;border:2px solid var(--copper)}
+        .blog-cta-button:hover{background:transparent;color:var(--copper)}
+        .blog-newsletter{background:var(--charcoal-blue);padding:var(--space-15) var(--space-3);text-align:center}
+        .blog-newsletter-content{max-width:600px;margin:0 auto}
+        .blog-newsletter h3{font-size:var(--text-2xl);color:var(--white);margin:0 0 var(--space-2) 0}
+        .blog-newsletter p{font-size:var(--text-md);color:rgba(255,255,255,0.8);margin:0 0 var(--space-4) 0}
+        .blog-newsletter-form{display:flex;gap:var(--space-1);max-width:500px;margin:0 auto}
+        .blog-newsletter-input{flex:1;padding:14px 20px;border:2px solid rgba(255,255,255,0.2);border-radius:6px;background:rgba(255,255,255,0.1);color:var(--white);font-family:inherit;font-size:var(--text-base)}
+        .blog-newsletter-input::placeholder{color:rgba(255,255,255,0.5)}
+        .blog-newsletter-button{padding:14px 32px;background:var(--copper);color:var(--white);border:2px solid var(--copper);border-radius:6px;font-weight:600;cursor:pointer;transition:all 0.3s ease}
+        .blog-newsletter-button:hover{background:transparent;color:var(--copper)}
+        footer{padding:var(--space-10) var(--space-3) var(--space-5);background:#0f151d;color:var(--white)}
+        .footer-content{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--space-6);margin-bottom:var(--space-7)}
+        .footer-brand .footer-logo{font-size:var(--text-2xl);font-weight:700;margin-bottom:var(--space-3);letter-spacing:0.05em}
+        .footer-brand .footer-logo span{color:var(--logo-blue)}
+        .footer-brand p{color:rgba(255,255,255,0.6);font-size:var(--text-base);margin-bottom:0}
+        .footer-column h4{color:var(--white);font-size:var(--text-base);font-weight:600;margin-bottom:var(--space-3)}
+        .footer-column ul{list-style:none}
+        .footer-column li{margin-bottom:var(--space-2)}
+        .footer-column a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:var(--text-base);transition:color 0.2s ease}
+        .footer-column a:hover{color:var(--copper)}
+        .footer-bottom{text-align:center;padding-top:var(--space-5);border-top:1px solid rgba(255,255,255,0.1)}
+        .footer-bottom p{font-size:var(--text-sm);margin-bottom:0;color:var(--copper)}
+        @media(max-width:900px){.footer-content{grid-template-columns:1fr 1fr;gap:var(--space-5)}}
+        @media(max-width:768px){nav{padding:var(--space-2) var(--space-3)}.blog-hero{min-height:80vh}.blog-content{padding:var(--space-12) var(--space-3)}.blog-inline-image{float:none;max-width:100%;margin:var(--space-6) auto;display:block}.blog-newsletter-form{flex-direction:column}.nav-links a:not(.nav-cta){display:none}.footer-content{grid-template-columns:1fr;text-align:center}}
     </style>
 </head>
 <body>
     <nav>
-        <a href="/" class="logo-link">
-            <span class="logo-text">RAGE<span>DESIGNER</span></span>
-        </a>
+        <a href="/" class="logo-link"><span class="logo-text">RAGE<span>DESIGNER</span></span></a>
         <div class="nav-links">
             <a href="/portfolio.html">Portfolio</a>
             <a href="/blog/">Blog</a>
-            <a href="https://ragedesigner.com/contact/" class="nav-cta">Get Started</a>
+            <a href="https://app.ragedesigner.com/contact/" class="nav-cta">Get Started</a>
         </div>
     </nav>
-    
     <section class="blog-hero">
         <div class="blog-hero-meta">Personal Insight • 5 min read</div>
         <h1 class="blog-hero-title">Why "Jack of All Trades" Beats "Master of One"</h1>
         <p class="blog-hero-subtitle">And why you should stop trying to niche down</p>
     </section>
-    
     <article class="blog-content">
         <p class="lead">For 25 years, I've been told to "niche down." Pick one thing. Master it. Become known for that one specialty. But here's what nobody tells you: being good at multiple things isn't a weakness. It's your unfair advantage.</p>
-
         <h2>The Myth of Specialization</h2>
         <p>The business world loves specialists. We're told that deep expertise in one narrow field is the path to success. But this advice ignores a fundamental truth: the most valuable innovations happen at the intersection of different disciplines.</p>
         <p>Steve Jobs wasn't just a technologist. He studied calligraphy, which influenced the beautiful typography in Apple products. Elon Musk combines physics, engineering, and business to revolutionize multiple industries. The pattern is clear: breadth creates breakthrough.</p>
-
         <h2>My 25-Year Journey</h2>
         <p>I started in graphic design in 1999, working for a church. By 2003, I had opened a tattoo shop where I was doing graphics, vinyl work, banners, and heat press designs. In 2011, I created my first logo design. By 2012, I was taking comprehensive graphic design courses while continuing print work.</p>
         <p>Along the way, I learned:</p>
@@ -375,24 +105,15 @@
             <li>Framework development and systematic approaches</li>
         </ul>
         <p>Every attempt to specialize felt like cutting off a limb. I wasn't scattered; I was connecting dots that specialists couldn't see.</p>
-
-        <div class="blog-pull-quote">
-            "The most valuable skill isn't deep expertise in one area. It's the ability to connect insights across multiple domains."
-        </div>
-
+        <div class="blog-pull-quote">"The most valuable skill isn't deep expertise in one area. It's the ability to connect insights across multiple domains."</div>
         <h2>Why Generalists Win</h2>
-        
         <h3>Pattern Recognition</h3>
         <p>When you work across multiple domains, you see patterns that specialists miss. A marketing problem might have a solution from manufacturing. A design challenge might be solved with a systems thinking approach. The connections are invisible until you've worked in both worlds.</p>
-
         <h3>Adaptive Intelligence</h3>
         <p>Specialists excel in stable environments. But business today is anything but stable. Generalists thrive in change because they're practiced at learning new domains, connecting disparate ideas, and pivoting when conditions shift.</p>
-
         <h3>Compound Value</h3>
         <p>Each skill you develop doesn't just add to your capabilities; it multiplies them. Design skills make you a better strategist. Technical knowledge makes you a better designer. Business acumen makes all of it more valuable. It's not addition, it's multiplication.</p>
-
-        <img src="https://ragedesigner.com/wp-content/uploads/2025/11/jack-of-all-trades.png" alt="Jack of all trades playing card illustration" class="blog-inline-image">
-
+        <img src="https://app.ragedesigner.com/wp-content/uploads/2025/11/jack-of-all-trades.png" alt="Jack of all trades playing card illustration" class="blog-inline-image">
         <h2>The RageDesigner Evolution</h2>
         <p>Today, RageDesigner isn't a design agency anymore. We're a strategic intelligence consultancy that helps professionals extract repeatable patterns from their breakthrough moments and transform them into systematic frameworks.</p>
         <p>This evolution was only possible because I refused to niche down. My background in:</p>
@@ -404,33 +125,20 @@
             <li>All of it combined taught me framework development</li>
         </ul>
         <p>None of these skills were wasted. They all compound into something unique that specialists can't replicate.</p>
-
-        <div class="blog-highlight">
-            <p><strong>Important:</strong> Your diverse background isn't a liability. It's your competitive advantage. Stop apologizing for not being narrow enough.</p>
-        </div>
-
+        <div class="blog-highlight"><p><strong>Important:</strong> Your diverse background isn't a liability. It's your competitive advantage. Stop apologizing for not being narrow enough.</p></div>
         <h2>How to Leverage Your Range</h2>
-        
         <h3>1. Document Your Connections</h3>
         <p>Write down the different skills and experiences you have. Then identify where they overlap or inform each other. These intersection points are where your unique value lives.</p>
-
         <h3>2. Stop Apologizing</h3>
         <p>When someone asks what you do, resist the urge to pick just one thing. Instead, describe the outcome you create by combining your diverse skills. Focus on the problem you solve, not the tools you use.</p>
-
         <h3>3. Build Systematic Approaches</h3>
         <p>Your ability to work across domains means you can create frameworks that specialists can't. Document your process. Turn your cross-disciplinary insights into repeatable methodologies. This is where generalists create massive value.</p>
-
         <h3>4. Seek Complex Problems</h3>
         <p>Don't compete in spaces where specialists dominate. Instead, find problems that require multiple perspectives to solve. These are the challenges where your range becomes an unfair advantage.</p>
-
         <h2>The Future Belongs to Connectors</h2>
         <p>As artificial intelligence and automation advance, deep but narrow expertise becomes easier to replicate. What machines can't replicate is the human ability to connect insights across domains, to see patterns that emerge only from diverse experience, to synthesize wisdom from multiple disciplines.</p>
         <p>The jack of all trades isn't a master of none. They're a master of connections, a specialist in synthesis, an expert in seeing what others miss. In a world of increasing complexity, this isn't just valuable. It's essential.</p>
-
-        <div class="blog-pull-quote">
-            "Your diverse background isn't preventing you from success. It's the foundation for a kind of success that specialists can never achieve."
-        </div>
-
+        <div class="blog-pull-quote">"Your diverse background isn't preventing you from success. It's the foundation for a kind of success that specialists can never achieve."</div>
         <h2>What This Means For You</h2>
         <p>If you're reading this and feeling validation because you've also been told to niche down but couldn't bring yourself to do it, good. Your instinct was right. Your diverse interests aren't a problem to fix. They're a signal pointing toward your unique contribution.</p>
         <p>Stop trying to be like everyone else. Stop cutting off pieces of yourself to fit someone else's template for success. Instead:</p>
@@ -443,19 +151,14 @@
         <p>The world doesn't need another specialist doing what specialists already do. It needs people who can connect the dots, who can synthesize insights across disciplines, who can see the patterns that emerge only from breadth of experience.</p>
         <p>That's you. That's your advantage. Now go use it.</p>
     </article>
-    
-    <div class="blog-author">
-        <p><em>Mike Goetz is the founder of RageDesigner. After 25 years building everything from tattoo shops to federal contractor brands, he now helps professionals extract repeatable patterns from breakthrough moments and transform them into systematic frameworks.</em></p>
-    </div>
-    
+    <div class="blog-author"><p><em>Mike Goetz is the founder of RageDesigner. After 25 years building everything from tattoo shops to federal contractor brands, he now helps professionals extract repeatable patterns from breakthrough moments and transform them into systematic frameworks.</em></p></div>
     <section class="blog-cta-section">
         <div class="blog-cta-content">
             <h3>Ready to Build Your Systematic Framework?</h3>
             <p>Learn to extract your breakthrough patterns and transform them into repeatable frameworks.</p>
-            <a href="https://ragedesigner.com/contact/" class="blog-cta-button">Start a Conversation</a>
+            <a href="https://app.ragedesigner.com/contact/" class="blog-cta-button">Start a Conversation</a>
         </div>
     </section>
-    
     <section class="blog-newsletter">
         <div class="blog-newsletter-content">
             <h3>Subscribe to Strategic Intelligence Weekly</h3>
@@ -466,7 +169,6 @@
             </form>
         </div>
     </section>
-    
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
@@ -492,14 +194,12 @@
             <div class="footer-column">
                 <h4>Connect</h4>
                 <ul>
-                    <li><a href="https://ragedesigner.com/contact/">Contact</a></li>
-                    <li><a href="https://ragedesigner.com/newsletter-sign-up/">Newsletter</a></li>
+                    <li><a href="https://app.ragedesigner.com/contact/">Contact</a></li>
+                    <li><a href="https://app.ragedesigner.com/newsletter-sign-up/">Newsletter</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 RageDesigner</p>
-        </div>
+        <div class="footer-bottom"><p>© 2026 RageDesigner</p></div>
     </footer>
 </body>
 </html>
