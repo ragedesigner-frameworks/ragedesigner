@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Nomad Gear for Creative Professionals | RageDesigner</title>
+    <meta name="description" content="The actual gear I use to run a strategic intelligence consultancy from anywhere. Portable monitors, power banks, headphones, and the tools that make mobile-first work possible.">
+    <meta property="og:title" content="Digital Nomad Gear for Creative Professionals | RageDesigner">
+    <meta property="og:description" content="The actual gear I use to run a strategic intelligence consultancy from anywhere.">
+    <meta property="og:url" content="https://ragedesigner.com/gear">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --charcoal-blue: #1A2332; --logo-blue: #325d74; --copper: #B7704F; --white: #ffffff; --light-gray: #f5f5f5; --logo-blue-light: rgba(50, 93, 116, 0.1); --charcoal-medium: rgba(26, 35, 50, 0.85); --charcoal-light: rgba(26, 35, 50, 0.6); --text-xs: 0.688rem; --text-sm: 0.875rem; --text-base: 1rem; --text-md: 1.125rem; --text-lg: 1.25rem; --text-xl: 1.563rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem; --text-5xl: 3.815rem; --leading-tight: 1.25; --leading-normal: 1.6; --leading-relaxed: 1.75; --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 40px; --space-6: 48px; --space-7: 56px; --space-10: 80px; --space-12: 96px; --space-15: 120px; --nav-height: 70px; --shadow-sm: 0 1px 3px rgba(26, 35, 50, 0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif; font-size: var(--text-base); line-height: var(--leading-normal); color: var(--charcoal-blue); background: var(--white); }
+        nav { background: var(--white); padding: var(--space-2) var(--space-6); border-bottom: 1px solid var(--logo-blue-light); position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; height: var(--nav-height); }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-text { font-size: var(--text-xl); font-weight: 700; color: var(--charcoal-blue); letter-spacing: 0.05em; }
+        .logo-text span { color: var(--logo-blue); }
+        .nav-links { display: flex; align-items: center; gap: var(--space-4); }
+        .nav-links a { color: var(--charcoal-light); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+        .nav-links a:hover { color: var(--logo-blue); }
+        .nav-cta { display: inline-block; background: var(--logo-blue); color: var(--white) !important; padding: 12px var(--space-3); font-size: var(--text-sm); font-weight: 600; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--logo-blue); }
+        .nav-cta:hover { background: transparent; color: var(--logo-blue) !important; transform: translateY(-2px); }
+        .nav-links a:not(.nav-cta) { position: relative; }
+        .nav-links a:not(.nav-cta)::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--logo-blue); transition: width 0.3s ease; }
+        .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+        
+        .page-hero { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: calc(var(--nav-height) + var(--space-10)) var(--space-3) var(--space-10); color: var(--white); position: relative; background: linear-gradient(135deg, var(--charcoal-blue) 0%, #2d4a5e 50%, var(--logo-blue) 100%); }
+        .page-hero-meta { font-size: var(--text-sm); color: var(--copper); font-weight: 700; margin-bottom: var(--space-3); text-transform: uppercase; letter-spacing: 1px; }
+        .page-hero-title { font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl)); font-weight: 700; line-height: var(--leading-tight); margin-bottom: var(--space-4); max-width: 900px; }
+        .page-hero-subtitle { font-size: clamp(var(--text-md), 3vw, var(--text-xl)); color: rgba(255,255,255,0.9); max-width: 700px; line-height: var(--leading-normal); }
+        
+        .page-content { max-width: 900px; margin: 0 auto; padding: var(--space-15) var(--space-3); }
+        .page-content p { font-size: var(--text-md); line-height: var(--leading-relaxed); color: var(--charcoal-medium); margin-bottom: var(--space-4); }
+        .page-content p.lead { font-size: var(--text-lg); color: var(--charcoal-blue); }
+        .page-content h2 { font-size: var(--text-2xl); color: var(--charcoal-blue); font-weight: 700; margin: var(--space-12) 0 var(--space-4) 0; line-height: var(--leading-tight); padding-bottom: var(--space-2); border-bottom: 3px solid var(--copper); }
+        .page-content h3 { font-size: var(--text-xl); color: var(--charcoal-blue); font-weight: 600; margin: var(--space-6) 0 var(--space-3) 0; }
+        
+        .gear-card { background: var(--light-gray); border-radius: 12px; padding: var(--space-5); margin: var(--space-5) 0; border-left: 4px solid var(--logo-blue); }
+        .gear-card h4 { font-size: var(--text-lg); color: var(--charcoal-blue); font-weight: 600; margin-bottom: var(--space-2); }
+        .gear-card .price { font-size: var(--text-sm); color: var(--copper); font-weight: 600; margin-bottom: var(--space-2); }
+        .gear-card p { margin-bottom: var(--space-2); font-size: var(--text-base); }
+        .gear-card .why-it-matters { font-style: italic; color: var(--charcoal-light); font-size: var(--text-sm); margin-top: var(--space-2); }
+        .gear-card a { color: var(--logo-blue); text-decoration: none; font-weight: 600; }
+        .gear-card a:hover { text-decoration: underline; }
+        
+        .gear-budget { background: #fff9f5; border-left-color: var(--copper); }
+        .gear-premium { background: #f5f9fc; border-left-color: var(--logo-blue); }
+        
+        .page-pull-quote { background: var(--light-gray); border-left: 4px solid var(--copper); padding: var(--space-5) var(--space-6); margin: var(--space-10) 0; font-size: var(--text-lg); font-style: italic; color: var(--charcoal-medium); line-height: var(--leading-relaxed); }
+        
+        .blog-author { max-width: 900px; margin: var(--space-15) auto 0; padding: var(--space-6) var(--space-5); background: var(--light-gray); border-radius: 8px; }
+        .blog-author p { font-size: var(--text-base); color: var(--charcoal-medium); line-height: var(--leading-relaxed); margin: 0; }
+        .blog-author a { color: var(--logo-blue); text-decoration: none; font-weight: 600; }
+        
+        .blog-cta-section { background: var(--light-gray); padding: var(--space-15) var(--space-3); text-align: center; margin-top: var(--space-15); }
+        .blog-cta-content { max-width: 800px; margin: 0 auto; }
+        .blog-cta-section h3 { font-size: var(--text-2xl); color: var(--charcoal-blue); margin: 0 0 var(--space-3) 0; }
+        .blog-cta-section p { font-size: var(--text-md); color: var(--charcoal-medium); margin: 0 0 var(--space-5) 0; }
+        .blog-cta-button { display: inline-block; padding: var(--space-2) var(--space-6); background: var(--copper); color: var(--white); text-decoration: none; border-radius: 8px; font-weight: 600; font-size: var(--text-md); transition: all 0.3s ease; border: 2px solid var(--copper); }
+        .blog-cta-button:hover { background: transparent; color: var(--copper); transform: translateY(-2px); }
+        
+        .blog-newsletter { background: var(--charcoal-blue); padding: var(--space-15) var(--space-3); text-align: center; }
+        .blog-newsletter-content { max-width: 600px; margin: 0 auto; }
+        .blog-newsletter h3 { font-size: var(--text-2xl); color: var(--white); margin: 0 0 var(--space-2) 0; }
+        .blog-newsletter p { font-size: var(--text-md); color: rgba(255, 255, 255, 0.8); margin: 0 0 var(--space-4) 0; }
+        .blog-newsletter-form { display: flex; gap: var(--space-1); max-width: 500px; margin: 0 auto; }
+        .blog-newsletter-input { flex: 1; padding: 14px 20px; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 6px; background: rgba(255, 255, 255, 0.1); color: var(--white); font-family: inherit; font-size: var(--text-base); }
+        .blog-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.5); }
+        .blog-newsletter-button { padding: 14px 32px; background: var(--copper); color: var(--white); border: 2px solid var(--copper); border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .blog-newsletter-button:hover { background: transparent; color: var(--copper); }
+        
+        footer { padding: var(--space-10) var(--space-3) var(--space-5); background: #0f151d; color: var(--white); }
+        .footer-content { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-6); margin-bottom: var(--space-7); }
+        .footer-brand .footer-logo { font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-3); letter-spacing: 0.05em; }
+        .footer-brand .footer-logo span { color: var(--logo-blue); }
+        .footer-brand p { color: rgba(255,255,255,0.6); font-size: var(--text-base); margin-bottom: 0; }
+        .footer-column h4 { color: var(--white); font-size: var(--text-base); font-weight: 600; margin-bottom: var(--space-3); }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: var(--space-2); }
+        .footer-column a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: var(--text-base); transition: color 0.2s ease; }
+        .footer-column a:hover { color: var(--copper); }
+        .footer-bottom { text-align: center; padding-top: var(--space-5); border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom p { font-size: var(--text-sm); margin-bottom: 0; color: var(--copper); }
+        
+        @media (max-width: 900px) { .footer-content { grid-template-columns: 1fr 1fr; gap: var(--space-5); } }
+        @media (max-width: 768px) { 
+            nav { padding: var(--space-2) var(--space-3); } 
+            .page-hero { min-height: 50vh; padding: calc(var(--nav-height) + var(--space-6)) var(--space-3) var(--space-6); } 
+            .page-content { padding: var(--space-12) var(--space-3); } 
+            .blog-newsletter-form { flex-direction: column; } 
+            .nav-links a:not(.nav-cta) { display: none; } 
+            .nav-cta { padding: 10px var(--space-2); font-size: var(--text-xs); } 
+            .footer-content { grid-template-columns: 1fr; text-align: center; } 
+            .gear-card { padding: var(--space-4); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link">
+            <span class="logo-text">RAGE<span>DESIGNER</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="/portfolio.html">Portfolio</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://app.ragedesigner.com/contact/" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+    
+    <section class="page-hero">
+        <div class="page-hero-meta">Remote Work Setup • Updated January 2026</div>
+        <h1 class="page-hero-title">Digital Nomad Gear for Creative Professionals</h1>
+        <p class="page-hero-subtitle">The actual tools I use to run a strategic intelligence consultancy from anywhere. No sponsored recommendations, just what works.</p>
+    </section>
+    
+    <article class="page-content">
+        <p class="lead">I do most of my strategic thinking while driving, gardening, or walking the dog. Voice mode on my phone, ideas flowing, then back to my desk to execute. This setup has evolved over years of figuring out what actually matters for mobile-first creative work.</p>
+
+        <p>This page exists because I kept getting asked the same question: "What do you actually use?" So here it is. Everything on this list I either own or have tested extensively. I've included budget alternatives where they exist because not everyone needs the premium option.</p>
+
+        <h2>Noise-Canceling Headphones</h2>
+        
+        <p>If you work from coffee shops, coworking spaces, airports, or anywhere with background noise, this is the single most important investment you can make. Good noise cancellation turns any environment into a focus zone.</p>
+
+        <div class="gear-card gear-premium">
+            <h4>Sony WH-1000XM5 Wireless Headphones</h4>
+            <div class="price">Around $250 to $350 (frequently on sale)</div>
+            <p>Industry-leading noise cancellation with 30-hour battery life. Eight microphones and two processors create what most reviewers consider the best ANC performance available. The lightweight design (250g) means you can wear them for extended work sessions without fatigue.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> When I'm processing complex strategic problems, I need zero distractions. These headphones eliminate airplane cabin noise, coffee shop chatter, and everything in between. The quick charge feature (3 hours playback from 3 minutes charging) has saved me before long flights.</p>
+        </div>
+
+        <div class="gear-card gear-budget">
+            <h4>Budget Alternative: Anker Soundcore Space Q45</h4>
+            <div class="price">Around $100 to $130</div>
+            <p>Solid noise cancellation at a fraction of the Sony price. Battery life actually exceeds the Sony at up to 50 hours. The ANC is not quite as refined, but for most environments, you will not notice the difference.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> If noise cancellation is new to you, start here. You can always upgrade later once you know how essential it becomes to your workflow.</p>
+        </div>
+
+        <h2>Portable Power</h2>
+        
+        <p>Running out of battery during a client call or in the middle of a deadline is not an option. I carry enough power to work a full day away from outlets.</p>
+
+        <div class="gear-card gear-premium">
+            <h4>Anker Prime Power Bank 27,650mAh (250W)</h4>
+            <div class="price">Around $150 to $180</div>
+            <p>This is a laptop charger that fits in your bag. Three USB-C ports can each push 100W, meaning you can charge a MacBook Pro to 50% in under 30 minutes while simultaneously charging your phone. The 99.54Wh capacity stays under TSA limits for carry-on travel.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> I have worked entire days from park benches and hotel lobbies with this thing. The smart display shows real-time wattage, temperature, and estimated time to empty. No more guessing if you have enough juice for that last call.</p>
+        </div>
+
+        <div class="gear-card gear-budget">
+            <h4>Budget Alternative: Anker 25K Laptop Power Bank (165W)</h4>
+            <div class="price">Around $100 to $120</div>
+            <p>Same brand, slightly less capacity (25,000mAh), but still enough to fully charge most laptops once plus your phone several times. Built-in retractable cables mean one less thing to forget.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> If you are not regularly charging multiple laptops simultaneously, this covers ninety-five percent of mobile work scenarios at a better price point.</p>
+        </div>
+
+        <div class="page-pull-quote">
+            The freedom to work from anywhere comes from eliminating battery anxiety. When you know you have eight hours of laptop power in your bag, you think differently about where you can be productive.
+        </div>
+
+        <h2>Portable Monitor</h2>
+        
+        <p>Adding a second screen to a laptop setup can save you two to three hours daily on multitasking-heavy work. Research on one screen, writing on the other. Client call on one, notes on the other.</p>
+
+        <div class="gear-card gear-premium">
+            <h4>ASUS ProArt Display PA148CTV</h4>
+            <div class="price">Around $300 to $350</div>
+            <p>A 14-inch portable monitor with color accuracy that matches desktop monitors. 100% sRGB coverage makes it suitable for design work. At 740g, it is light enough to travel with regularly. Single USB-C cable handles both power and video.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> When I need to review design work or color-critical documents away from my main setup, this monitor delivers accurate results. The touchscreen is surprisingly useful for quick navigation.</p>
+        </div>
+
+        <div class="gear-card gear-budget">
+            <h4>Budget Alternative: Arzopa Z1C 16.1-inch Portable Monitor</h4>
+            <div class="price">Around $120 to $150</div>
+            <p>Larger screen (16.1 inches) at a third of the price. Full HD resolution with 100% sRGB coverage. Slightly heavier at 1.1 pounds, but the extra screen real estate is worth it for many workflows.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> Unless you need professional color accuracy, this monitor handles everyday second-screen duties perfectly. The price difference funds other gear upgrades.</p>
+        </div>
+
+        <h2>Laptop Stand</h2>
+        
+        <p>Your neck will thank you. Looking down at a laptop screen for hours creates strain that compounds over time. A portable stand brings your screen to eye level and requires a separate keyboard, which also improves your typing posture.</p>
+
+        <div class="gear-card gear-premium">
+            <h4>Roost V3 Laptop Stand</h4>
+            <div class="price">Around $75 to $85</div>
+            <p>The original portable laptop stand, and still the benchmark. Carbon fiber construction weighs only 6 ounces (170g) while supporting laptops up to 18 inches. Adjustable height from 6 to 14 inches. Folds completely flat for travel.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> I have used this stand in coworking spaces across three continents. The build quality is exceptional, and the rubber grips have never let my laptop slip. American-made with responsive customer support if anything goes wrong.</p>
+        </div>
+
+        <div class="gear-card gear-budget">
+            <h4>Budget Alternative: Nexstand K2</h4>
+            <div class="price">Around $30 to $40</div>
+            <p>Nearly identical design to the Roost at less than half the price. Made from fiberglass-reinforced nylon instead of carbon fiber. Slightly heavier at 8 ounces but includes a carrying case. Eight height adjustment levels versus seven on the Roost.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> Most digital nomads I meet use the Nexstand. It handles daily use well and the price lets you buy one for home and one for travel without hesitation. The only tradeoff is durability over years of heavy use.</p>
+        </div>
+
+        <h2>Wireless Input Devices</h2>
+        
+        <p>Once you use a laptop stand, you need a separate keyboard and mouse. These should be compact enough for travel but comfortable enough for all-day use.</p>
+
+        <div class="gear-card gear-premium">
+            <h4>Apple Magic Keyboard with Touch ID</h4>
+            <div class="price">Around $150 to $200</div>
+            <p>If you are in the Apple ecosystem, this keyboard integrates perfectly. Touch ID for quick unlocking and Apple Pay. Rechargeable battery lasts about a month. Slim profile packs easily.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> The Touch ID alone saves time when you work in public spaces and need to lock your laptop frequently. Seamless switching between Mac and iPad if you use both.</p>
+        </div>
+
+        <div class="gear-card gear-budget">
+            <h4>Budget Alternative: Logitech Keys-To-Go 2</h4>
+            <div class="price">Around $70 to $80</div>
+            <p>Ultra-slim wireless keyboard that works with Mac, Windows, iOS, and Android. Spill-resistant design survives coffee shop accidents. Connects via Bluetooth to up to three devices with easy switching.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> Cross-platform compatibility matters if you switch between devices. The slim profile fits in laptop bags that reject bulkier keyboards.</p>
+        </div>
+
+        <div class="gear-card gear-premium">
+            <h4>Logitech MX Master 3S Mouse</h4>
+            <div class="price">Around $90 to $100</div>
+            <p>The professional's travel mouse. Works on any surface including glass. USB-C charging. Connects to three devices with easy switching. Quiet clicks for library and coffee shop work.</p>
+            <p class="why-it-matters"><strong>Why it matters:</strong> The scroll wheel alone is worth the price. Hyper-fast scrolling through documents saves real time when you process a lot of content. Ergonomic shape prevents wrist strain during long sessions.</p>
+        </div>
+
+        <h2>The Philosophy Behind This Setup</h2>
+        
+        <p>Everything I have listed here shares common principles. Portability without sacrificing function. Quality that lasts years rather than months. Tools that disappear into the workflow rather than creating friction.</p>
+        
+        <p>I could work with less. Many people do. But I have found that investing in the right gear eliminates small frustrations that compound into lost productivity. The battery that dies at the wrong moment. The headphones that do not quite block the conversation at the next table. The screen position that creates neck pain by hour three.</p>
+        
+        <p>These tools are not about luxury. They are about creating conditions where your best thinking can happen, wherever you happen to be.</p>
+    </article>
+    
+    <div class="blog-author">
+        <p><em>Mike Goetz (RageDesigner) runs a strategic intelligence consultancy from wherever he happens to be. After 25 years building and running a design agency, he now focuses on helping organizations think more systematically about their challenges. He does his best strategic thinking while driving, which probably says something about the state of traditional office environments.</em></p>
+    </div>
+    
+    <section class="blog-cta-section">
+        <div class="blog-cta-content">
+            <h3>Want to Learn Systematic Thinking?</h3>
+            <p>The gear matters less than the frameworks you use to think through problems. Strategic Thinking Academy teaches you how to build decision-making frameworks that work across any domain.</p>
+            <a href="https://whatisaframework.com" class="blog-cta-button">Explore Strategic Thinking</a>
+        </div>
+    </section>
+    
+    <section class="blog-newsletter">
+        <div class="blog-newsletter-content">
+            <h3>Subscribe to Strategic Intelligence Weekly</h3>
+            <p>Get weekly insights on systematic thinking, framework development, and strategic design delivered to your inbox.</p>
+            <form class="blog-newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="email" name="email" placeholder="Your email address" class="blog-newsletter-input" required>
+                <button type="submit" class="blog-newsletter-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">RAGE<span>DESIGNER</span></div>
+                <p>Strategic Design & Marketing Intelligence since 1999. Building systems that compound.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/foundation-services.html">Foundation Services</a></li>
+                    <li><a href="/integrated-solutions.html">Integrated Solutions</a></li>
+                    <li><a href="/consulting.html">Strategic Consulting</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="https://whatisaframework.com" target="_blank">What Is A Framework?</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://app.ragedesigner.com/contact/">Contact</a></li>
+                    <li><a href="https://app.ragedesigner.com/newsletter-sign-up/">Newsletter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 RageDesigner</p>
+        </div>
+    </footer>
+</body>
+</html>
