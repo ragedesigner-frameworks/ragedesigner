@@ -84,13 +84,8 @@
         .form-container { max-width: 600px; margin: 0 auto; background: var(--white); border-radius: 12px; padding: var(--space-6); box-shadow: var(--shadow-md); }
         .form-container h2 { margin-bottom: var(--space-4); }
         .form-intro { text-align: center; margin-bottom: var(--space-5); }
-        .form-group { margin-bottom: var(--space-3); }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--charcoal-blue); }
-        .form-group input, .form-group textarea { width: 100%; padding: 14px var(--space-2); border: 2px solid var(--logo-blue-light); border-radius: 8px; font-size: var(--text-base); font-family: inherit; transition: border-color 0.2s ease; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--logo-blue); }
-        .form-group textarea { min-height: 100px; resize: vertical; }
-        .form-submit { width: 100%; background: var(--logo-blue); color: var(--white); padding: var(--space-2) var(--space-4); font-size: var(--text-md); font-weight: 600; border: 2px solid var(--logo-blue); border-radius: 8px; cursor: pointer; transition: all 0.3s ease; margin-top: var(--space-3); }
-        .form-submit:hover { background: transparent; color: var(--logo-blue); }
+        .form-iframe-wrapper { min-height: 500px; }
+        .form-iframe-wrapper iframe { width: 100%; min-height: 500px; border: none; }
         .form-privacy { font-size: var(--text-sm); color: var(--charcoal-light); text-align: center; margin-top: var(--space-3); margin-bottom: 0; }
         .community { background: var(--charcoal-blue); color: var(--white); }
         .community h2 { color: var(--white); }
@@ -164,13 +159,9 @@
         <div class="form-container">
             <h2>Join the Testing Community</h2>
             <p class="form-intro">Get access to SCOPE framework and connect with other strategic thinkers testing systematic approaches</p>
-            <form action="https://formspree.io/f/mpwabqqn" method="POST">
-                <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
-                <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
-                <div class="form-group"><label for="title">Job Title</label><input type="text" id="title" name="title"></div>
-                <div class="form-group"><label for="challenge">Biggest strategic challenge you are facing right now</label><textarea id="challenge" name="challenge" placeholder="What's keeping you up at night?"></textarea></div>
-                <button type="submit" class="form-submit">Get Framework & Join Community</button>
-            </form>
+            <div class="form-iframe-wrapper">
+                <iframe src="https://app.ragedesigner.com/contact/" title="Contact Form"></iframe>
+            </div>
             <p class="form-privacy">We use your information only for framework delivery and optional research participation. No spam, no sales calls.</p>
         </div>
     </section>
